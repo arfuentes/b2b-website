@@ -1,0 +1,178 @@
+{
+  "header": {
+    "login": "Login",
+    "features": "Features",
+    "pricing": "Pricing",
+    "requestDemo": "Request a Demo",
+    "tryFree": "Try for Free!"
+  },
+  "footer": {
+    "company": "Company",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "blog": "Blog",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "candidates": "Candidates",
+    "howToPrepare": "How to Prepare",
+    "aboutAssessments": "About Assessments",
+    "aboutQuestionnaires": "About Questionnaires",
+    "followUs": "Follow Us",
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "home": {
+    "hero": {
+      "title": "Revolutionize Your Assessment Process",
+      "subtitle": "The most comprehensive platform for evaluating and managing candidates",
+      "ctaButton": "Get Started",
+      "secondaryButton": "Learn More"
+    },
+    "trustedBy": {
+      "title": "Trusted by leading companies"
+    },
+    "features": {
+      "title": "Why choose our platform",
+      "subtitle": "We provide everything you need to streamline your assessment workflow"
+    },
+    "video": {
+      "title": "See our platform in action",
+      "subtitle": "Watch how our platform can transform your assessment process"
+    },
+    "testimonials": {
+      "title": "What our customers say",
+      "subtitle": "Join thousands of satisfied clients across the globe"
+    },
+    "security": {
+      "title": "Enterprise-grade security",
+      "subtitle": "Your data is safe with us",
+      "feature1": "SOC 2 Type II Compliant",
+      "feature2": "GDPR Ready",
+      "feature3": "End-to-end Encryption",
+      "feature4": "Regular Security Audits"
+    }
+  },
+  "requestDemo": {
+    "title": "Request a Personalized Demo",
+    "subtitle": "Fill out the form below and we'll reach out to schedule a demo",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Business Email",
+      "company": "Company Name",
+      "jobTitle": "Job Title",
+      "phoneNumber": "Phone Number",
+      "companySize": "Company Size",
+      "interests": "What are you interested in?",
+      "message": "Additional Information",
+      "submit": "Request Demo",
+      "required": "Required",
+      "validation": {
+        "required": "This field is required",
+        "email": "Please enter a valid email address",
+        "phone": "Please enter a valid phone number"
+      }
+    },
+    "success": {
+      "title": "Thank You!",
+      "message": "We've received your demo request. Check your email for a verification link to confirm your request."
+    },
+    "validation": {
+      "title": "Demo Request Verification",
+      "loading": "Validating your request...",
+      "success": {
+        "title": "Success!",
+        "message": "Your demo request has been verified. Our team will contact you shortly to schedule your demo."
+      },
+      "error": {
+        "title": "Verification Failed",
+        "message": "The verification link is invalid or has expired. Please submit a new demo request."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that works best for your business",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "cta": "Get Started",
+    "enterprise": {
+      "title": "Need a custom solution?",
+      "description": "Contact us to discuss your specific needs",
+      "button": "Contact Sales"
+    }
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Everything you need to transform your assessment process",
+    "cta": "Get Started Today"
+  },
+  "security": {
+    "title": "Enterprise-Grade Security",
+    "subtitle": "Data protection is our top priority",
+    "compliance": "Compliance & Certifications",
+    "dataProtection": "Data Protection",
+    "privacy": "Privacy Controls",
+    "infrastructure": "Secure Infrastructure"
+  },
+  "about": {
+    "title": "About Us",
+    "mission": "Our Mission",
+    "story": "Our Story",
+    "team": "Leadership Team",
+    "values": "Our Values"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thank you for reaching out. We'll get back to you as soon as possible."
+    },
+    "office": "Our Office",
+    "support": "Customer Support"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Latest insights, tips, and updates",
+    "readMore": "Read More",
+    "searchPlaceholder": "Search articles...",
+    "categories": "Categories",
+    "relatedPosts": "Related Posts",
+    "sharePost": "Share This Post",
+    "publishedOn": "Published on"
+  },
+  "candidates": {
+    "prepare": {
+      "title": "How to Prepare",
+      "subtitle": "Tips and resources to help you succeed"
+    },
+    "assessments": {
+      "title": "About Assessments",
+      "subtitle": "Understanding our assessment process"
+    },
+    "questionnaires": {
+      "title": "About Online Questionnaires",
+      "subtitle": "What to expect from our questionnaires"
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "error": "An error occurred. Please try again."
+  }
+}

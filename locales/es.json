@@ -1,0 +1,178 @@
+{
+  "header": {
+    "login": "Iniciar sesión",
+    "features": "Características",
+    "pricing": "Precios",
+    "requestDemo": "Solicitar una Demo",
+    "tryFree": "¡Prueba Gratis!"
+  },
+  "footer": {
+    "company": "Empresa",
+    "aboutUs": "Sobre Nosotros",
+    "contactUs": "Contáctanos",
+    "blog": "Blog",
+    "product": "Producto",
+    "features": "Características",
+    "pricing": "Precios",
+    "security": "Seguridad",
+    "candidates": "Candidatos",
+    "howToPrepare": "Cómo Prepararse",
+    "aboutAssessments": "Sobre las Evaluaciones",
+    "aboutQuestionnaires": "Sobre los Cuestionarios",
+    "followUs": "Síguenos",
+    "copyright": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "home": {
+    "hero": {
+      "title": "Revoluciona Tu Proceso de Evaluación",
+      "subtitle": "La plataforma más completa para evaluar y gestionar candidatos",
+      "ctaButton": "Comenzar",
+      "secondaryButton": "Saber Más"
+    },
+    "trustedBy": {
+      "title": "Empresas que confían en nosotros"
+    },
+    "features": {
+      "title": "Por qué elegir nuestra plataforma",
+      "subtitle": "Proporcionamos todo lo que necesitas para optimizar tu flujo de evaluación"
+    },
+    "video": {
+      "title": "Ve nuestra plataforma en acción",
+      "subtitle": "Observa cómo nuestra plataforma puede transformar tu proceso de evaluación"
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros clientes",
+      "subtitle": "Únete a miles de clientes satisfechos en todo el mundo"
+    },
+    "security": {
+      "title": "Seguridad de nivel empresarial",
+      "subtitle": "Tus datos están seguros con nosotros",
+      "feature1": "Cumplimiento SOC 2 Tipo II",
+      "feature2": "Preparado para GDPR",
+      "feature3": "Cifrado de extremo a extremo",
+      "feature4": "Auditorías de seguridad regulares"
+    }
+  },
+  "requestDemo": {
+    "title": "Solicita una Demo Personalizada",
+    "subtitle": "Completa el formulario y te contactaremos para programar una demo",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo Electrónico Empresarial",
+      "company": "Nombre de la Empresa",
+      "jobTitle": "Puesto de Trabajo",
+      "phoneNumber": "Número de Teléfono",
+      "companySize": "Tamaño de la Empresa",
+      "interests": "¿Qué te interesa?",
+      "message": "Información Adicional",
+      "submit": "Solicitar Demo",
+      "required": "Obligatorio",
+      "validation": {
+        "required": "Este campo es obligatorio",
+        "email": "Por favor, introduce un correo electrónico válido",
+        "phone": "Por favor, introduce un número de teléfono válido"
+      }
+    },
+    "success": {
+      "title": "¡Gracias!",
+      "message": "Hemos recibido tu solicitud de demo. Revisa tu correo electrónico para obtener un enlace de verificación."
+    },
+    "validation": {
+      "title": "Verificación de Solicitud de Demo",
+      "loading": "Validando tu solicitud...",
+      "success": {
+        "title": "¡Éxito!",
+        "message": "Tu solicitud de demo ha sido verificada. Nuestro equipo te contactará en breve para programar tu demo."
+      },
+      "error": {
+        "title": "Verificación Fallida",
+        "message": "El enlace de verificación es inválido o ha expirado. Por favor, envía una nueva solicitud de demo."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Precios Simples y Transparentes",
+    "subtitle": "Elige el plan que mejor se adapte a tu negocio",
+    "monthly": "Mensual",
+    "annual": "Anual",
+    "cta": "Comenzar",
+    "enterprise": {
+      "title": "¿Necesitas una solución personalizada?",
+      "description": "Contáctanos para discutir tus necesidades específicas",
+      "button": "Contactar a Ventas"
+    }
+  },
+  "features": {
+    "title": "Características",
+    "subtitle": "Todo lo que necesitas para transformar tu proceso de evaluación",
+    "cta": "Comienza Hoy"
+  },
+  "security": {
+    "title": "Seguridad de Nivel Empresarial",
+    "subtitle": "La protección de datos es nuestra prioridad",
+    "compliance": "Cumplimiento y Certificaciones",
+    "dataProtection": "Protección de Datos",
+    "privacy": "Controles de Privacidad",
+    "infrastructure": "Infraestructura Segura"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "mission": "Nuestra Misión",
+    "story": "Nuestra Historia",
+    "team": "Equipo Directivo",
+    "values": "Nuestros Valores"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Nos encantaría saber de ti",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Dirección de Correo Electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje"
+    },
+    "success": {
+      "title": "¡Mensaje Enviado!",
+      "message": "Gracias por contactarnos. Te responderemos lo antes posible."
+    },
+    "office": "Nuestra Oficina",
+    "support": "Soporte al Cliente"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Últimas ideas, consejos y actualizaciones",
+    "readMore": "Leer Más",
+    "searchPlaceholder": "Buscar artículos...",
+    "categories": "Categorías",
+    "relatedPosts": "Publicaciones Relacionadas",
+    "sharePost": "Compartir Esta Publicación",
+    "publishedOn": "Publicado el"
+  },
+  "candidates": {
+    "prepare": {
+      "title": "Cómo Prepararse",
+      "subtitle": "Consejos y recursos para ayudarte a tener éxito"
+    },
+    "assessments": {
+      "title": "Sobre las Evaluaciones",
+      "subtitle": "Entendiendo nuestro proceso de evaluación"
+    },
+    "questionnaires": {
+      "title": "Sobre los Cuestionarios en Línea",
+      "subtitle": "Qué esperar de nuestros cuestionarios"
+    }
+  },
+  "common": {
+    "learnMore": "Saber Más",
+    "viewAll": "Ver Todo",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error. Por favor, inténtalo de nuevo."
+  }
+}

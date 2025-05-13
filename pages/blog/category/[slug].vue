@@ -30,12 +30,19 @@
         </div>
 
         <!-- Posts Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          v-if="posts.length > 0"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           <BlogCard 
             v-for="post in posts" 
             :key="post.id" 
             :post="post" 
           />
+        </div>
+
+        <div v-else class="text-center py-12">
+          <p class="text-neutral-600 text-lg">No posts found in this category.</p>
         </div>
 
         <!-- Pagination -->
@@ -62,7 +69,7 @@ import { useApi } from '~/composables/useApi'
 
 const route = useRoute()
 const router = useRouter()
-const { getBlogPostsByCategory, loading, error } = useApi()
+const { getBlogPosts, loading, error } = useApi()
 const localePath = useLocalePath()
 
 const posts = ref([])
@@ -79,23 +86,30 @@ const pagination = ref<{
 
 const fetchPosts = async (page = 1) => {
   try {
-    const response = await getBlogPostsByCategory(route.params.slug as string, page)
+    const response = await getBlogPosts(page, 6, '', { 'category.slug': route.params.slug as string })
     
-    if (!response || !response.data) {
-      throw new Error('Invalid response from server')
+    if (!response.data || !Array.isArray(response.data)) {
+      throw new Error('Invalid or missing data in server response')
     }
-    
+
     posts.value = response.data
     pagination.value = response.pagination
-    
-    // Get category details from the first post if available
-    if (response.data.length > 0 && response.data[0].category) {
-      categoryName.value = response.data[0].category.name
-      categoryDescription.value = response.data[0].category.description || ''
+
+    // Get category details from the first post
+    if (response.data.length > 0) {
+      const firstPost = response.data[0]
+      if (firstPost.category) {
+        categoryName.value = firstPost.category.name
+        categoryDescription.value = firstPost.category.description || ''
+      } else {
+        router.push(localePath('/blog'))
+      }
+    } else {
+      router.push(localePath('/blog'))
     }
   } catch (err) {
     console.error('Error fetching category posts:', err)
-    throw err
+    error.value = err instanceof Error ? err.message : 'Failed to load posts'
   }
 }
 

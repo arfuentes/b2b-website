@@ -1,23 +1,26 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+    <section class="bg-secondary-500 text-white py-20">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 mb-10 md:mb-0">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 animate-slide-up">
-              {{ $t('home.hero.title') }}
+              Smarter, faster hiring starts here
             </h1>
             <p class="text-xl md:text-2xl mb-8 text-primary-100 animate-slide-up" style="animation-delay: 0.1s;">
-              {{ $t('home.hero.subtitle') }}
+              Your All-in-One Solution for Streamlined Recruitment
             </p>
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-slide-up" style="animation-delay: 0.2s;">
-              <NuxtLink :to="localePath('/request-demo')" class="bg-accent-300 hover:bg-accent-400 text-neutral-900 font-bold py-3 px-8 rounded-lg text-center transition-colors">
-                {{ $t('home.hero.ctaButton') }}
+            <div class="flex flex-col space-y-4 animate-slide-up" style="animation-delay: 0.2s;">
+              <NuxtLink :to="localePath('/try-free')" class="bg-accent-300 hover:bg-accent-400 text-neutral-900 font-bold py-3 px-8 rounded-lg text-center transition-colors">
+                Start your Free Trial Today
               </NuxtLink>
-              <NuxtLink :to="localePath('/features')" class="bg-transparent hover:bg-primary-700/50 border-2 border-white text-white font-bold py-3 px-8 rounded-lg text-center transition-colors">
-                {{ $t('home.hero.secondaryButton') }}
-              </NuxtLink>
+              <p class="text-sm text-center text-primary-100">No credit card required</p>
+              <div class="bg-primary-700/50 p-4 rounded-lg mt-4">
+                <p class="text-sm text-primary-100">
+                  Try Zamdit in Sample Data mode to test most of the platform's features without needing to add data or invite candidates.
+                </p>
+              </div>
             </div>
           </div>
           <div class="md:w-1/2 animate-fade-in" style="animation-delay: 0.3s;">

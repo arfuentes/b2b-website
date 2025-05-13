@@ -44,7 +44,8 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_locale',
       redirectOn: 'root',
       alwaysRedirect: true
-    }
+    },
+    ssr: false
   },
   
   app: {
@@ -70,7 +71,7 @@ export default defineNuxtConfig({
   // For API integration
   runtimeConfig: {
     public: {
-      apiBase: process.env.API_BASE_URL || 'http://localhost:8000'
+      apiBase: process.env.API_BASE_URL || 'https://api.test.zamdit.com/web'
     }
   }
 })

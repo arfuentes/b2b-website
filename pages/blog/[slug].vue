@@ -1,12 +1,9 @@
 <template>
   <div>
     <!-- Loading State -->
-    <div v-if="loading" class="py-20 text-center">
+    <div v-if="pending" class="py-20 text-center">
       <div class="w-16 h-16 mx-auto mb-4">
-        <svg class="animate-spin text-primary-500 w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
+        <div class="animate-spin rounded-full h-16 w-16 border-4 border-primary-500 border-t-transparent"></div>
       </div>
       <p class="text-lg text-neutral-600">
         {{ $t('common.loading') }}
@@ -29,7 +26,7 @@
     </div>
 
     <!-- Blog Post Content -->
-    <div v-else class="min-h-screen bg-neutral-50">
+    <div v-else-if="post" class="min-h-screen bg-neutral-50">
       <!-- Header Section -->
       <div class="bg-white border-b border-neutral-200 py-12">
         <div class="container mx-auto px-4">
@@ -104,13 +101,13 @@
           <div class="prose prose-lg max-w-none mb-12" v-html="post.content"></div>
 
           <!-- Related Posts -->
-          <div v-if="relatedPosts.length > 0">
+          <div v-if="post.relatedPosts?.length > 0">
             <h2 class="text-2xl font-heading font-bold mb-6">
               {{ $t('blog.relatedPosts') }}
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <BlogCard 
-                v-for="relatedPost in relatedPosts" 
+                v-for="relatedPost in post.relatedPosts" 
                 :key="relatedPost.id" 
                 :post="relatedPost" 
               />
@@ -122,21 +119,54 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted, computed } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useAsyncData } from '#app'
+import { useApi } from '~/composables/useApi'
 
-const route = useRoute();
-const api = useApi();
-const localePath = useLocalePath();
+const route = useRoute()
+const localePath = useLocalePath()
+const { headers } = useApi()
 
-const post = ref(null);
-const relatedPosts = ref([]);
-const loading = ref(true);
-const error = ref(null);
+interface Post {
+  id: number
+  title: string
+  slug: string
+  content: string
+  image: {
+    url: string
+  }
+  category: {
+    id: number
+    name: string
+    slug: string
+  }
+  author: {
+    id: number
+    name: string
+    image: {
+      url: string
+    }
+  }
+  publishedAt: string
+  relatedPosts?: Post[]
+}
+
+const { data: post, pending, error } = await useAsyncData<Post>(
+  'blog-post',
+  () => $fetch(`${useRuntimeConfig().public.apiBase}/posts/slug/${route.params.slug}`, {
+    headers
+  }),
+  {
+    server: false
+  }
+)
 
 const shareNetworks = computed(() => {
-  const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent(post.value?.title || '');
+  if (!post.value) return []
+  
+  const url = encodeURIComponent(window.location.href)
+  const title = encodeURIComponent(post.value.title)
   
   return [
     {
@@ -154,33 +184,19 @@ const shareNetworks = computed(() => {
       url: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`,
       icon: 'linkedin'
     }
-  ];
-});
+  ]
+})
 
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString)
   return new Intl.DateTimeFormat('en-US', { 
     year: 'numeric', 
     month: 'long', 
     day: 'numeric' 
-  }).format(date);
-};
+  }).format(date)
+}
 
-const sharePost = (url) => {
-  window.open(url, '_blank', 'width=600,height=400');
-};
-
-onMounted(async () => {
-  try {
-    const slug = route.params.slug;
-    const postData = await api.getBlogPostBySlug(slug);
-    post.value = postData;
-    relatedPosts.value = postData.relatedPosts;
-  } catch (err) {
-    error.value = err.message || 'Failed to load blog post';
-    console.error('Error fetching blog post:', err);
-  } finally {
-    loading.value = false;
-  }
-});
+const sharePost = (url: string) => {
+  window.open(url, '_blank', 'width=600,height=400')
+}
 </script>

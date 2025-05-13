@@ -36,7 +36,7 @@
         <div class="flex justify-between items-center h-20">
           <!-- Logo -->
           <NuxtLink :to="localePath('/')" class="flex-shrink-0">
-            <img src="/images/logo.svg" alt="Logo" class="h-8" />
+            <img src="/images/logo.svg" alt="Zamdit" class="h-12" />
           </NuxtLink>
           
           <!-- Navigation Links -->

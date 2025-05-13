@@ -11,7 +11,8 @@ export default defineNuxtPlugin(({ vueApp }) => {
     messages: {
       en,
       es
-    }
+    },
+    sync: true
   })
 
   vueApp.use(i18n)

@@ -7,20 +7,28 @@
           <NuxtLink :to="localePath('/login')" class="text-sm hover:text-primary-300 transition-colors">
             {{ $t('header.login') }}
           </NuxtLink>
-          <div class="relative" @mouseenter="showLanguageMenu = true" @mouseleave="showLanguageMenu = false">
-            <button class="text-sm hover:text-primary-300 transition-colors flex items-center">
+          <div class="relative" ref="languageMenu">
+            <button 
+              class="text-sm hover:text-primary-300 transition-colors flex items-center"
+              @click="toggleLanguageMenu"
+            >
               {{ currentLocale.name }}
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
             </button>
             <!-- Language menu -->
-            <div v-if="showLanguageMenu" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl z-50">
+            <div 
+              v-if="showLanguageMenu" 
+              class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl z-50"
+              @click.stop
+            >
               <NuxtLink
                 v-for="locale in availableLocales"
                 :key="locale.code"
                 :to="switchLocalePath(locale.code)"
                 class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 transition-colors"
+                @click="showLanguageMenu = false"
               >
                 {{ locale.name }}
               </NuxtLink>
@@ -131,6 +139,7 @@ const { localePath, switchLocalePath } = useI18nRouting();
 const mobileMenuOpen = ref(false);
 const showLanguageMenu = ref(false);
 const topBar = ref<HTMLElement | null>(null);
+const languageMenu = ref<HTMLElement | null>(null);
 let lastScrollPosition = 0;
 
 const currentLocale = computed(() => {
@@ -146,6 +155,10 @@ const availableLocales = computed(() => {
     { code: 'es', name: 'Español' }
   ].filter(l => l.code !== locale.value);
 });
+
+const toggleLanguageMenu = () => {
+  showLanguageMenu.value = !showLanguageMenu.value;
+};
 
 // Handle scroll for hiding top bar
 const handleScroll = () => {
@@ -166,11 +179,20 @@ const handleScroll = () => {
   lastScrollPosition = currentScrollPosition;
 };
 
+// Close language menu when clicking outside
+const handleClickOutside = (event: MouseEvent) => {
+  if (languageMenu.value && !languageMenu.value.contains(event.target as Node)) {
+    showLanguageMenu.value = false;
+  }
+};
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
+  document.addEventListener('click', handleClickOutside);
 });
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
+  document.removeEventListener('click', handleClickOutside);
 });
 </script>

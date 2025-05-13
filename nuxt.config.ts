@@ -38,14 +38,13 @@ export default defineNuxtConfig({
       }
     ],
     lazy: false,
-    langDir: './locales',
+    langDir: 'locales',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_locale',
       redirectOn: 'root',
       alwaysRedirect: true
-    },
-    ssr: false
+    }
   },
   
   app: {

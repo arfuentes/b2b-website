@@ -39,12 +39,12 @@
     </div>
     
     <!-- Main navigation - sticky -->
-    <nav class="bg-white shadow-md sticky top-0 z-40">
+    <nav class="bg-white shadow-md sticky top-0 z-40 py-2">
       <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-20">
+        <div class="flex justify-between items-center">
           <!-- Logo -->
-          <NuxtLink :to="localePath('/')" class="flex-shrink-0">
-            <img src="/images/logo.svg" alt="Zamdit" class="h-12" />
+          <NuxtLink :to="localePath('/')" class="flex-shrink-0 p-1">
+            <img src="/images/logo.svg" alt="Zamdit" class="h-[40px]" />
           </NuxtLink>
           
           <!-- Navigation Links -->
@@ -59,10 +59,10 @@
           
           <!-- CTA Buttons -->
           <div class="hidden md:flex items-center space-x-4">
-            <NuxtLink :to="localePath('/request-demo')" class="text-primary-500 hover:text-primary-600 transition-colors">
+            <NuxtLink :to="localePath('/request-demo')" class="border-2 border-primary-500 text-primary-500 bg-transparent hover:bg-primary-50 hover:text-primary-600 px-4 py-1 rounded-md transition-colors">
               {{ $t('header.requestDemo') }}
             </NuxtLink>
-            <NuxtLink :to="localePath('/try-free')" class="bg-accent-300 hover:bg-accent-400 text-neutral-900 px-4 py-2 rounded-lg transition-colors">
+            <NuxtLink to="https://app3.test.zamdit.com/register/email" class="bg-primary-500 border-2 border-primary-500 hover:bg-secondary-500 hover:border-secondary-500 text-white px-4 py-1 rounded-md transition-colors">
               {{ $t('header.tryFree') }}
             </NuxtLink>
           </div>

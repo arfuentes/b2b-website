@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-neutral-800 text-white py-12">
+  <footer class="bg-secondary-600 text-white py-12">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Company section -->

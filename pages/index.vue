@@ -2,7 +2,7 @@
   <div>
     <!-- Hero Section -->
     <section
-      class="bg-white text-secondary-500 py-20"
+      class="bg-white text-secondary-500 py-16"
       style="
         background-color: #ecf3fa;
         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgNTAnIHdpZHRoPScxMDAnIGhlaWdodD0nNTAnPjxjaXJjbGUgY2xhc3M9J2NpcmNsZScgZmlsbD0nd2hpdGUnIGN4PSc1MCcgY3k9Jy02MCcgcj0nMTAwJy8+PC9zdmc+');
@@ -32,7 +32,7 @@
               <NuxtLink
                 to="https://app3.test.zamdit.com/register/email"
                 class="w-full bg-primary-500 hover:bg-secondary-500 text-white font-bold py-2 px-8 rounded-lg text-center transition-colors"
-                style="max-width: 320px;"
+                style="max-width: 320px"
               >
                 Start your Free Trial Today
               </NuxtLink>
@@ -51,14 +51,14 @@
             </div>
           </div>
           <div class="w-100 lg:w-7/12">
-            <img src="/images/hero.png" alt="Hero Image" class="p" />
+            <img src="/images/home/hero.png" alt="Hero Image" class="p" />
           </div>
         </div>
       </div>
     </section>
 
     <!-- Trusted By Section -->
-    <section class="py-16 bg-neutral-50">
+    <section class="py-16 bg-alternate">
       <div class="container mx-auto px-4">
         <h2
           class="text-center text-2xl font-heading font-bold mb-12 text-neutral-800"
@@ -100,191 +100,107 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Feature 1 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-primary-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-heading font-bold mb-3 text-neutral-800">
-              Comprehensive Assessments
-            </h3>
-            <p class="text-neutral-600">
-              Access a library of validated assessments for technical skills,
-              personality, cognitive abilities, and more.
-            </p>
+        <!-- Feature 1 -->
+        <div class="flex flex-col flex-col-reverse sm:flex-row mb-12">
+          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
+            <img
+              src="/images/home/centralized-hiring-hub.png"
+              alt="Centralized Hiring Hub"
+              class="rounded-md w-full max-w-[480px] self-center"
+            />
           </div>
-
-          <!-- Feature 2 -->
           <div
-            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
           >
-            <div
-              class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-primary-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
-                />
-              </svg>
+            <div class="flex flex-grow pb-4">
+              <h3 class="self-end">Centralized Hiring Hub</h3>
             </div>
-            <h3 class="text-xl font-heading font-bold mb-3 text-neutral-800">
-              Candidate Engagement
-            </h3>
-            <p class="text-neutral-600">
-              Create personalized, branded experiences for candidates with
-              interactive assessments.
-            </p>
+            <div class="flex flex-grow">
+              <p class="self-start pb-2">
+                Manage all your hiring activities in one place. From posting
+                jobs to scheduling interviews, Zamdit simplifies your hiring
+                workflow, allowing your team to collaborate easily, track
+                candidate progress, and share notes, all within one dashboard.
+              </p>
+            </div>
           </div>
+        </div>
 
-          <!-- Feature 3 -->
+        <!-- Feature 2 -->
+        <div class="flex flex-col sm:flex-row mb-12">
           <div
-            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
           >
-            <div
-              class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-primary-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                />
-              </svg>
+            <div class="flex flex-grow pb-4">
+              <h3 class="self-end">Fast and Automated Hiring Processes</h3>
             </div>
-            <h3 class="text-xl font-heading font-bold mb-3 text-neutral-800">
-              Advanced Analytics
-            </h3>
-            <p class="text-neutral-600">
-              Gain valuable insights with detailed reporting and analytics to
-              make data-driven decisions.
-            </p>
+            <div class="flex flex-grow">
+              <p class="self-start pb-2">
+                Move candidates through the hiring process faster than ever.
+                Automated assessments, reminders, and streamlined approvals save
+                valuable time, so your team can focus on making the right hiring
+                decisions.
+              </p>
+            </div>
           </div>
-
-          <!-- Feature 4 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-primary-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-heading font-bold mb-3 text-neutral-800">
-              Enterprise Security
-            </h3>
-            <p class="text-neutral-600">
-              Protect sensitive data with enterprise-grade security features and
-              compliance standards.
-            </p>
+          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
+            <img
+              src="/images/home/automated-hiring-processes.png"
+              alt="Fast and Automated Hiring Processes"
+              class="rounded-md w-full max-w-[480px] self-center"
+            />
           </div>
+        </div>
 
-          <!-- Feature 5 -->
-          <div
-            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-primary-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-heading font-bold mb-3 text-neutral-800">
-              Customizable Workflows
-            </h3>
-            <p class="text-neutral-600">
-              Create tailored assessment workflows that integrate with your
-              existing hiring process.
-            </p>
+        <!-- Feature 3 -->
+        <div class="flex flex-col flex-col-reverse sm:flex-row mb-12">
+          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
+            <img
+              src="/images/home/thorough-candidate-evaluations.png"
+              alt="Thorough Candidate Evaluations"
+              class="rounded-md w-full max-w-[480px] self-center"
+            />
           </div>
-
-          <!-- Feature 6 -->
           <div
-            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
           >
-            <div
-              class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-primary-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
-                />
-              </svg>
+            <div class="flex flex-grow pb-4">
+              <h3 class="self-end">Thorough Candidate Evaluations</h3>
             </div>
-            <h3 class="text-xl font-heading font-bold mb-3 text-neutral-800">
-              Seamless Integration
-            </h3>
-            <p class="text-neutral-600">
-              Integrate with your ATS, HRIS, and other HR systems for a seamless
-              workflow.
-            </p>
+            <div class="flex flex-grow">
+              <p class="self-start pb-2">
+                Make hiring decisions with confidence using tools for in-depth
+                candidate evaluations. Use Zamdit's customizable scorecards,
+                detailed comparison tools, and automated evaluation summaries to
+                deeply analyze candidate suitability.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="flex flex-col sm:flex-row mb-12">
+          <div
+            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
+          >
+            <div class="flex flex-grow pb-4">
+              <h3 class="self-end">No-Code Career Portal Builder</h3>
+            </div>
+            <div class="flex flex-grow">
+              <p class="self-start pb-2">
+                Attract quality talent with a branded, no-code career portal.
+                Easily create and update your portal to showcase open positions,
+                company culture, and growth opportunities to stand out in a
+                competitive hiring landscape.
+              </p>
+            </div>
+          </div>
+          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
+            <img
+              src="/images/home/career-portal-builder.png"
+              alt="No-Code Career Portal Builder"
+              class="rounded-md w-full max-w-[480px] self-center"
+            />
           </div>
         </div>
       </div>
@@ -340,7 +256,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-neutral-50">
+    <section class="py-20 bg-alternate">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2
@@ -370,7 +286,7 @@
               make more informed decisions and our candidate experience has
               improved dramatically."
             </p>
-            <div class="flex text-accent-300">
+            <div class="flex text-yellow-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -442,7 +358,7 @@
               never had before. Our quality of hire has improved significantly
               since implementing this solution."
             </p>
-            <div class="flex text-accent-300">
+            <div class="flex text-yellow-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -514,7 +430,7 @@
               the quality of our candidates. The platform is intuitive and our
               team was able to get up and running quickly."
             </p>
-            <div class="flex text-accent-300">
+            <div class="flex text-yellow-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -572,152 +488,87 @@
     </section>
 
     <!-- Security Section -->
-    <section class="py-20">
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 mb-10 md:mb-0 md:pr-12">
-            <h2
-              class="text-3xl md:text-4xl font-heading font-bold mb-4 text-neutral-800"
-            >
-              {{ $t("home.security.title") }}
-            </h2>
-            <p class="text-xl text-neutral-600 mb-8">
-              {{ $t("home.security.subtitle") }}
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex items-center">
-                <div
-                  class="w-10 h-10 bg-success-100 rounded-full flex items-center justify-center mr-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-success-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <span class="text-neutral-700">{{
-                  $t("home.security.feature1")
-                }}</span>
-              </div>
-
-              <div class="flex items-center">
-                <div
-                  class="w-10 h-10 bg-success-100 rounded-full flex items-center justify-center mr-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-success-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <span class="text-neutral-700">{{
-                  $t("home.security.feature2")
-                }}</span>
-              </div>
-
-              <div class="flex items-center">
-                <div
-                  class="w-10 h-10 bg-success-100 rounded-full flex items-center justify-center mr-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-success-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <span class="text-neutral-700">{{
-                  $t("home.security.feature3")
-                }}</span>
-              </div>
-
-              <div class="flex items-center">
-                <div
-                  class="w-10 h-10 bg-success-100 rounded-full flex items-center justify-center mr-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-success-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <span class="text-neutral-700">{{
-                  $t("home.security.feature4")
-                }}</span>
-              </div>
-            </div>
-
-            <div class="mt-8">
-              <NuxtLink
-                :to="localePath('/security')"
-                class="inline-flex items-center text-primary-500 font-medium hover:text-primary-600 transition-colors"
-              >
-                {{ $t("common.learnMore") }}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 ml-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </NuxtLink>
-            </div>
-          </div>
-
-          <div class="md:w-1/2">
+        <h2
+          class="text-3xl md:text-4xl font-heading font-bold mb-4 text-neutral-800 text-center"
+        >
+          {{ $t("home.security.title") }}
+        </h2>
+        <p class="text-xl text-center text-neutral-600 mb-8">
+          {{ $t("home.security.subtitle") }}
+        </p>
+        <div class="flex flex-col sm:flex-row">
+          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-3">
             <img
-              src="https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg"
+              src="/images/home/enterprise-grade-security.png"
               alt="Security Image"
-              class="rounded-lg shadow-xl"
+              class="rounded-md"
+              style="
+                width: 100%;
+                align-self: flex-start;
+                height: 100%;
+                object-fit: cover;
+                object-position: 100% 50%;
+                border-radius: 5px;
+              "
             />
           </div>
+          <div class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-xl">
+            <p>
+              At Zamdit, we prioritize the security and privacy of your data.
+              Our platform is built on reliable, world-class cloud
+              infrastructure, ensuring your information is always protected and
+              accessible when you need it.
+            </p>
+            <ul class="list-disc pl-6 py-2">
+              <li class="my-2">
+                <strong>Advanced Security Measures</strong>: Zamdit uses
+                industry-standard encryption and secure connections to keep your
+                data safe from unauthorised access.
+              </li>
+              <li class="my-2">
+                <strong>GDPR Compliance</strong>: We adhere to stringent data
+                protection regulations to safeguard candidate and organisational
+                information.
+              </li>
+              <li class="my-2">
+                <strong>Regular Monitoring and Audits</strong>: Our team
+                conducts continuous monitoring and security audits to maintain
+                the highest standards of safety and reliability.
+              </li>
+            </ul>
+            <p>
+              With Zamdit, you can focus on hiring the best talent while we take
+              care of protecting your data.
+            </p>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <NuxtLink
+            :to="localePath('/security')"
+            class="inline-flex items-center text-primary-500 font-medium hover:text-primary-600 transition-colors"
+          >
+            {{ $t("common.learnMore") }}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 ml-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </NuxtLink>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-primary-700 text-white">
+    <!-- <section class="py-16 bg-primary-700 text-white">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
           Ready to transform your assessment process?
@@ -731,19 +582,19 @@
         >
           <NuxtLink
             :to="localePath('/request-demo')"
-            class="bg-white hover:bg-neutral-100 text-primary-700 font-bold py-3 px-8 rounded-lg text-center transition-colors"
+            class="bg-white font-bold text-primary-700 hover:bg-neutral-100 py-3 px-8 rounded-md text-center transition-colors"
           >
             {{ $t("header.requestDemo") }}
           </NuxtLink>
           <NuxtLink
             :to="localePath('/try-free')"
-            class="bg-accent-300 hover:bg-accent-400 text-neutral-900 font-bold py-3 px-8 rounded-lg text-center transition-colors"
+            class="bg-secondary-500 text-white font-bold hover:bg-secondary-600 py-3 px-8 rounded-md text-center transition-colors"
           >
             {{ $t("header.tryFree") }}
           </NuxtLink>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

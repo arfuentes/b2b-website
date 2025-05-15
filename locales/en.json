@@ -32,23 +32,23 @@
       "secondaryButton": "Learn More"
     },
     "trustedBy": {
-      "title": "Trusted by leading companies"
+      "title": "Loved by 500+ companies"
     },
     "features": {
-      "title": "Why choose our platform",
-      "subtitle": "We provide everything you need to streamline your assessment workflow"
+      "title": "Everything you need to hire with confidence",
+      "subtitle": "We provide everything you need to streamline your hiring workflow"
     },
     "video": {
-      "title": "See our platform in action",
-      "subtitle": "Watch how our platform can transform your assessment process"
+      "title": "See how Zamdit works in 60 seconds!",
+      "subtitle": "Watch how our platform can transform your hiring process"
     },
     "testimonials": {
-      "title": "What our customers say",
+      "title": "What our customers are saying",
       "subtitle": "Join thousands of satisfied clients across the globe"
     },
     "security": {
-      "title": "Enterprise-grade security",
-      "subtitle": "Your data is safe with us",
+      "title": "Your data is safe with us",
+      "subtitle": "Enterprise-grade security",
       "feature1": "SOC 2 Type II Compliant",
       "feature2": "GDPR Ready",
       "feature3": "End-to-end Encryption",

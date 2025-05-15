@@ -14,8 +14,8 @@ export default defineNuxtConfig({
   // Google Fonts configuration
   googleFonts: {
     families: {
-      Montserrat: [700],
-      Nunito: [400, 600]
+      Montserrat: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      Nunito: [200, 300, 400, 500, 600, 700, 800, 900]
     },
     display: 'swap',
     download: true

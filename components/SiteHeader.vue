@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <header class="fixed w-full top-0 z-50">
     <!-- Top bar - hidden on scroll -->
-    <div ref="topBar" class="bg-neutral-800 text-white py-2 transition-transform duration-300">
+    <div ref="topBar" class="bg-neutral-100 text-secondary-300 py-1 transition-opacity duration-300 ease-in-out">
       <div class="container mx-auto px-4">
         <div class="flex justify-end items-center space-x-4">
           <NuxtLink :to="localePath('/login')" class="text-sm hover:text-primary-300 transition-colors">
@@ -38,17 +38,17 @@
       </div>
     </div>
     
-    <!-- Main navigation - sticky -->
-    <nav class="bg-white shadow-md sticky top-0 z-40 py-2">
-      <div class="container mx-auto px-4">
+    <!-- Main navigation -->
+    <nav class="bg-white shadow-md transition-transform duration-300">
+      <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
           <!-- Logo -->
-          <NuxtLink :to="localePath('/')" class="flex-shrink-0 p-1">
-            <img src="/images/logo.svg" alt="Zamdit" class="h-[40px]" />
+          <NuxtLink :to="localePath('/')" class="flex-shrink-0">
+            <img src="/images/logo.svg" alt="Zamdit" class="h-10" />
           </NuxtLink>
           
           <!-- Navigation Links -->
-          <div class="hidden md:flex items-center space-x-8">
+          <div class="hidden md:flex text-lg items-center space-x-8">
             <NuxtLink :to="localePath('/features')" class="text-neutral-700 hover:text-primary-500 transition-colors">
               {{ $t('header.features') }}
             </NuxtLink>
@@ -59,10 +59,10 @@
           
           <!-- CTA Buttons -->
           <div class="hidden md:flex items-center space-x-4">
-            <NuxtLink :to="localePath('/request-demo')" class="border-2 border-primary-500 text-primary-500 bg-transparent hover:bg-primary-50 hover:text-primary-600 px-4 py-1 rounded-md transition-colors">
+            <NuxtLink :to="localePath('/request-demo')" class="border-2 border-primary-500 text-primary-500 font-bold bg-transparent hover:text-secondary-500 hover:border-secondary-500 px-4 py-1 rounded-md transition-colors">
               {{ $t('header.requestDemo') }}
             </NuxtLink>
-            <NuxtLink to="https://app3.test.zamdit.com/register/email" class="bg-primary-500 border-2 border-primary-500 hover:bg-secondary-500 hover:border-secondary-500 text-white px-4 py-1 rounded-md transition-colors">
+            <NuxtLink to="https://app3.test.zamdit.com/register/email" class="bg-primary-500 font-bold border-2 border-primary-500 hover:bg-secondary-500 hover:border-secondary-500 text-white px-4 py-1 rounded-md transition-colors">
               {{ $t('header.tryFree') }}
             </NuxtLink>
           </div>
@@ -118,7 +118,7 @@
           </NuxtLink>
           <NuxtLink 
             :to="localePath('/try-free')"
-            class="block px-3 py-2 rounded-md text-base font-medium bg-accent-300 hover:bg-accent-400 text-neutral-900 transition-colors"
+            class="block px-3 py-2 rounded-md text-base font-medium bg-secondary hover:bg-secondary-600 text-neutral-900 transition-colors"
           >
             {{ $t('header.tryFree') }}
           </NuxtLink>
@@ -126,6 +126,9 @@
       </div>
     </nav>
   </header>
+
+  <!-- Spacer to prevent content from being hidden under fixed header -->
+  <div class="h-[92px]"></div>
 </template>
 
 <script setup lang="ts">
@@ -164,15 +167,18 @@ const toggleLanguageMenu = () => {
 const handleScroll = () => {
   const currentScrollPosition = window.scrollY;
   
-  if (currentScrollPosition < lastScrollPosition || currentScrollPosition < 50) {
+  //if (currentScrollPosition < lastScrollPosition || currentScrollPosition < 50) {
+   if (currentScrollPosition < 28) {
     // Scrolling up or near top - show the bar
     if (topBar.value) {
-      topBar.value.style.transform = 'translateY(0)';
+      // topBar.value.style.transform = 'translateY(0)';
+      topBar.value.classList.remove('hidden', 'pointer-events-none');
     }
   } else {
     // Scrolling down - hide the bar
     if (topBar.value) {
-      topBar.value.style.transform = 'translateY(-100%)';
+      topBar.value.classList.add('hidden', 'pointer-events-none');
+      // topBar.value.style.transform = 'translateY(-100%)';
     }
   }
   

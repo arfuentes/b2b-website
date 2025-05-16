@@ -36,7 +36,27 @@
     },
     "features": {
       "title": "Everything you need to hire with confidence",
-      "subtitle": "We provide everything you need to streamline your hiring workflow"
+      "subtitle": "We provide everything you need to streamline your hiring workflow",
+      "feature1": {
+        "image": "centralized-hiring-hub.png",
+        "title": "Centralized Hiring Hub",
+        "text": "Manage all your hiring activities in one place. From posting jobs to scheduling interviews, Zamdit simplifies your hiring workflow, allowing your team to collaborate easily, track candidate progress, and share notes, all within one dashboard."
+      },
+      "feature2": {
+        "image": "automated-hiring-processes.png",
+        "title": "Fast and Automated Hiring Processes",
+        "text": "Move candidates through the hiring process faster than ever. Automated assessments, reminders, and streamlined approvals save valuable time, so your team can focus on making the right hiring decisions."
+      },
+      "feature3": {
+        "image": "thorough-candidate-evaluations.png",
+        "title": "Thorough Candidate Evaluations",
+        "text": "Make hiring decisions with confidence using tools for in-depth candidate evaluations. Use Zamdit's customizable scorecards, detailed comparison tools, and automated evaluation summaries to deeply analyze candidate suitability."
+      },
+      "feature4": {
+        "image": "career-portal-builder.png",
+        "title": "No-Code Career Portal Builder",
+        "text": "Attract quality talent with a branded, no-code career portal. Easily create and update your portal to showcase open positions, company culture, and growth opportunities to stand out in a competitive hiring landscape."
+      }
     },
     "video": {
       "title": "See how Zamdit works in 60 seconds!",

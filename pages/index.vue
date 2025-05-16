@@ -19,10 +19,7 @@
             >
               Smarter, faster hiring starts here
             </h1>
-            <p
-              class="text-3xl text-center mb-8"
-              style="animation-delay: 0.1s"
-            >
+            <p class="text-3xl text-center mb-8" style="animation-delay: 0.1s">
               Your All-in-One Solution for Streamlined Recruitment
             </p>
             <div
@@ -65,23 +62,13 @@
         >
           {{ $t("home.trustedBy.title") }}
         </h2>
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-          <!-- These would be replaced with actual company logos -->
-          <div
-            class="w-32 h-12 bg-neutral-200 rounded opacity-70 hover:opacity-100 transition-opacity"
-          ></div>
-          <div
-            class="w-32 h-12 bg-neutral-200 rounded opacity-70 hover:opacity-100 transition-opacity"
-          ></div>
-          <div
-            class="w-32 h-12 bg-neutral-200 rounded opacity-70 hover:opacity-100 transition-opacity"
-          ></div>
-          <div
-            class="w-32 h-12 bg-neutral-200 rounded opacity-70 hover:opacity-100 transition-opacity"
-          ></div>
-          <div
-            class="w-32 h-12 bg-neutral-200 rounded opacity-70 hover:opacity-100 transition-opacity"
-          ></div>
+        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+          <div v-for="logo in logos" :key="logo" class="flex p-1">
+            <img
+              :src="`/images/partners/${logo}`"
+              class="w-full max-w-full max-h-8 self-center object-cover object-center opacity-50 hover:opacity-100 transition-opacity"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -100,105 +87,30 @@
           </p>
         </div>
 
-        <!-- Feature 1 -->
-        <div class="flex flex-col flex-col-reverse sm:flex-row mb-12">
-          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
-            <img
-              src="/images/home/centralized-hiring-hub.png"
-              alt="Centralized Hiring Hub"
-              class="rounded-md w-full max-w-[480px] self-center"
-            />
-          </div>
+        <div
+          v-for="(feature, index) in features"
+          :key="index"
+          :class="[
+            'flex flex-col sm:flex-row mb-12',
+            feature.imageFirst ? 'sm:flex-row-reverse' : '',
+          ]"
+        >
           <div
             class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
           >
             <div class="flex flex-grow pb-4">
-              <h3 class="self-end">Centralized Hiring Hub</h3>
+              <h3 class="self-end">{{ feature.title }}</h3>
             </div>
             <div class="flex flex-grow">
               <p class="self-start pb-2">
-                Manage all your hiring activities in one place. From posting
-                jobs to scheduling interviews, Zamdit simplifies your hiring
-                workflow, allowing your team to collaborate easily, track
-                candidate progress, and share notes, all within one dashboard.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="flex flex-col sm:flex-row mb-12">
-          <div
-            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
-          >
-            <div class="flex flex-grow pb-4">
-              <h3 class="self-end">Fast and Automated Hiring Processes</h3>
-            </div>
-            <div class="flex flex-grow">
-              <p class="self-start pb-2">
-                Move candidates through the hiring process faster than ever.
-                Automated assessments, reminders, and streamlined approvals save
-                valuable time, so your team can focus on making the right hiring
-                decisions.
+                {{ feature.text }}
               </p>
             </div>
           </div>
           <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
             <img
-              src="/images/home/automated-hiring-processes.png"
-              alt="Fast and Automated Hiring Processes"
-              class="rounded-md w-full max-w-[480px] self-center"
-            />
-          </div>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="flex flex-col flex-col-reverse sm:flex-row mb-12">
-          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
-            <img
-              src="/images/home/thorough-candidate-evaluations.png"
-              alt="Thorough Candidate Evaluations"
-              class="rounded-md w-full max-w-[480px] self-center"
-            />
-          </div>
-          <div
-            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
-          >
-            <div class="flex flex-grow pb-4">
-              <h3 class="self-end">Thorough Candidate Evaluations</h3>
-            </div>
-            <div class="flex flex-grow">
-              <p class="self-start pb-2">
-                Make hiring decisions with confidence using tools for in-depth
-                candidate evaluations. Use Zamdit's customizable scorecards,
-                detailed comparison tools, and automated evaluation summaries to
-                deeply analyze candidate suitability.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="flex flex-col sm:flex-row mb-12">
-          <div
-            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
-          >
-            <div class="flex flex-grow pb-4">
-              <h3 class="self-end">No-Code Career Portal Builder</h3>
-            </div>
-            <div class="flex flex-grow">
-              <p class="self-start pb-2">
-                Attract quality talent with a branded, no-code career portal.
-                Easily create and update your portal to showcase open positions,
-                company culture, and growth opportunities to stand out in a
-                competitive hiring landscape.
-              </p>
-            </div>
-          </div>
-          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
-            <img
-              src="/images/home/career-portal-builder.png"
-              alt="No-Code Career Portal Builder"
+              :src="`/images/home/${feature.imageSrc}`"
+              :alt="feature.title"
               class="rounded-md w-full max-w-[480px] self-center"
             />
           </div>
@@ -598,6 +510,24 @@
   </div>
 </template>
 
-<script setup>
-const localePath = useLocalePath();
+<script setup lang="ts">
+const { t } = useI18n();
+
+const features = computed(() =>
+  Array.from({ length: 4 }, (_, i) => i + 1).map((idx) => ({
+    title: t(`home.features.feature${idx}.title`),
+    text: t(`home.features.feature${idx}.text`),
+    imageSrc: t(`home.features.feature${idx}.image`),
+    imageFirst: idx % 2 == 1,
+  }))
+);
+
+const logos = [
+  "fullcomms.png",
+  "nibcode.png",
+  "klixel.png",
+  "kpro.png",
+  "greenfield.png",
+  "nexatech.png",
+];
 </script>

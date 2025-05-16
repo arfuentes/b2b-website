@@ -545,8 +545,8 @@
           </div>
         </div>
         <div class="mt-8 text-center">
-          <NuxtLink
-            :to="localePath('/security')"
+          <NuxtLinkLocale
+            to="security"
             class="inline-flex items-center text-primary-500 font-medium hover:text-primary-600 transition-colors"
           >
             {{ $t("common.learnMore") }}
@@ -562,7 +562,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
     </section>
@@ -580,14 +580,14 @@
         <div
           class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
         >
-          <NuxtLink
-            :to="localePath('/request-demo')"
+          <NuxtLinkLocale
+            to="demo"
             class="bg-white font-bold text-primary-700 hover:bg-neutral-100 py-3 px-8 rounded-md text-center transition-colors"
           >
             {{ $t("header.requestDemo") }}
-          </NuxtLink>
+          </NuxtLinkLocale>
           <NuxtLink
-            :to="localePath('/try-free')"
+            to="https://app3.test.zamdit.com/register/email"
             class="bg-secondary-500 text-white font-bold hover:bg-secondary-600 py-3 px-8 rounded-md text-center transition-colors"
           >
             {{ $t("header.tryFree") }}

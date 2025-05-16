@@ -7,19 +7,19 @@
           <h3 class="text-xl font-heading mb-4">{{ $t('footer.company') }}</h3>
           <ul class="space-y-2">
             <li>
-              <NuxtLink :to="localePath('/about-us')" class="footer-link">
+              <NuxtLinkLocale to="about" class="footer-link">
                 {{ $t('footer.aboutUs') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li>
-              <NuxtLink :to="localePath('/contact-us')" class="footer-link">
+              <NuxtLinkLocale to="contact" class="footer-link">
                 {{ $t('footer.contactUs') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li>
-              <NuxtLink :to="localePath('/blog')" class="footer-link">
+              <NuxtLinkLocale to="blog" class="footer-link">
                 {{ $t('footer.blog') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
           </ul>
         </div>
@@ -29,19 +29,19 @@
           <h3 class="text-xl font-heading mb-4">{{ $t('footer.product') }}</h3>
           <ul class="space-y-2">
             <li>
-              <NuxtLink :to="localePath('/features')" class="footer-link">
+              <NuxtLinkLocale to="features" class="footer-link">
                 {{ $t('footer.features') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li>
-              <NuxtLink :to="localePath('/pricing')" class="footer-link">
+              <NuxtLinkLocale to="pricing" class="footer-link">
                 {{ $t('footer.pricing') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li>
-              <NuxtLink :to="localePath('/security')" class="footer-link">
+              <NuxtLinkLocale to="security" class="footer-link">
                 {{ $t('footer.security') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
           </ul>
         </div>
@@ -51,19 +51,19 @@
           <h3 class="text-xl font-heading mb-4">{{ $t('footer.candidates') }}</h3>
           <ul class="space-y-2">
             <li>
-              <NuxtLink :to="localePath('/how-to-prepare')" class="footer-link">
+              <NuxtLinkLocale to="prepare" class="footer-link">
                 {{ $t('footer.howToPrepare') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li>
-              <NuxtLink :to="localePath('/about-assessments')" class="footer-link">
+              <NuxtLinkLocale to="assessments" class="footer-link">
                 {{ $t('footer.aboutAssessments') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li>
-              <NuxtLink :to="localePath('/about-questionnaires')" class="footer-link">
+              <NuxtLinkLocale to="questionnaires" class="footer-link">
                 {{ $t('footer.aboutQuestionnaires') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
           </ul>
         </div>
@@ -97,12 +97,12 @@
           &copy; {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}
         </div>
         <div class="flex mt-4 md:mt-0 space-x-6">
-          <NuxtLink :to="localePath('/privacy')" class="hover:text-white transition-colors">
+          <NuxtLinkLocale to="privacy" class="hover:text-white transition-colors">
             {{ $t('footer.privacy') }}
-          </NuxtLink>
-          <NuxtLink :to="localePath('/terms')" class="hover:text-white transition-colors">
+          </NuxtLinkLocale>
+          <NuxtLinkLocale to="terms" class="hover:text-white transition-colors">
             {{ $t('footer.terms') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
     </div>

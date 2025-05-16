@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   i18n: {
     strategy: "prefix_except_default",
     defaultLocale: "en",
+    customRoutes: "config",
     locales: [
       {
         code: "en",
@@ -37,6 +38,68 @@ export default defineNuxtConfig({
         file: "es.json",
       },
     ],
+    pages: {
+      about: {
+        en: "/about-us",
+        es: "/sobre-nosotros",
+      },
+      assessments: {
+        en: "/about-assessments",
+        es: "/sobre-las-evaluaciones",
+      },
+      blog: {
+        en: "/blog",
+        es: "/blog",
+      },
+      "blog-slug": {
+        en: "/blog/[slug]",
+        es: "/blog/[slug]",
+      },
+      "blog-category-slug": {
+        en: "/blog/category/[slug]",
+        es: "/blog/categoria/[slug]",
+      },
+      "confirm-id-token": {
+        en: "/confirm-demo/[id]/[token]",
+        es: "/confirmar-demo/[id]/[token]",
+      },
+      contact: {
+        en: "/contact-us",
+        es: "/contactanos",
+      },
+      demo: {
+        en: "/request-demo",
+        es: "/solicitar-demo",
+      },
+      features: {
+        en: "/features",
+        es: "/caracteristicas",
+      },
+      prepare: {
+        en: "/how-to-prepare",
+        es: "/como-preparase",
+      },
+      pricing: {
+        en: "/pricing",
+        es: "/precios",
+      },
+      privacy: {
+        en: "/privacy",
+        es: "/privacidad",
+      },
+      questionnaires: {
+        en: "/about-questionnaires",
+        es: "/sobre-los-cuestionarios",
+      },
+      security: {
+        en: "/security",
+        es: "/seguridad",
+      },
+      terms: {
+        en: "/terms",
+        es: "/terminos",
+      },
+    },
     lazy: false,
     detectBrowserLanguage: {
       useCookie: true,
@@ -73,5 +136,8 @@ export default defineNuxtConfig({
     public: {
       apiBase: process.env.API_BASE_URL || "https://api.test.zamdit.com/web",
     },
+  },
+  gtag: {
+    id: "X-XXXXXXXXXX",
   },
 });

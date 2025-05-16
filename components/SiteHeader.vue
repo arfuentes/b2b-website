@@ -8,7 +8,7 @@
       <div class="container mx-auto px-4">
         <div class="flex justify-end items-center space-x-4">
           <NuxtLink
-            :to="localePath('/login')"
+            to="https://app3.test.zamdit.com/auth/login"
             class="text-sm hover:text-primary-500 transition-colors"
           >
             {{ $t("header.login") }}
@@ -53,15 +53,14 @@
               class="absolute right-0 mt-2 py-2 bg-white rounded-md shadow-xl z-50"
               @click.stop
             >
-              <NuxtLink
+              <div
                 v-for="locale in availableLocales"
                 :key="locale.code"
-                :to="switchLocalePath(locale.code)"
-                class="block px-8 py-2 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-secondary-600 transition-colors"
-                @click="showLanguageMenu = false"
+                class="block px-8 py-2 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-secondary-600 transition-colors cursor-pointer"
+                @click="switchLanguage(locale.code)"
               >
                 {{ locale.name }}
-              </NuxtLink>
+              </div>
             </div>
           </div>
         </div>
@@ -73,40 +72,40 @@
       <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
           <!-- Logo -->
-          <NuxtLink :to="localePath('/')" class="flex-shrink-0">
+          <NuxtLinkLocale to="/" class="flex-shrink-0">
             <img src="/images/logo.svg" alt="Zamdit" class="h-10" />
-          </NuxtLink>
+          </NuxtLinkLocale>
 
           <!-- Navigation Links -->
           <div class="hidden md:flex text-lg items-center space-x-8">
-            <NuxtLink
-              :to="localePath('/features')"
+            <NuxtLinkLocale
+              to="features"
               class="text-neutral-700 hover:text-primary-500 transition-colors"
             >
               {{ $t("header.features") }}
-            </NuxtLink>
-            <NuxtLink
-              :to="localePath('/pricing')"
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
+              to="pricing"
               class="text-neutral-700 hover:text-primary-500 transition-colors"
             >
               {{ $t("header.pricing") }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
 
           <!-- CTA Buttons -->
           <div class="hidden md:flex items-center space-x-4">
-            <NuxtLink
-              :to="localePath('/request-demo')"
+            <NuxtLinkLocale
+              to="demo"
               class="border-2 border-primary-500 text-primary-500 font-bold bg-transparent hover:text-secondary-500 hover:border-secondary-500 px-4 py-1 rounded-md transition-colors"
             >
               {{ $t("header.requestDemo") }}
-            </NuxtLink>
-            <NuxtLink
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
               to="https://app3.test.zamdit.com/register/email"
               class="bg-primary-500 font-bold border-2 border-primary-500 hover:bg-secondary-500 hover:border-secondary-500 text-white px-4 py-1 rounded-md transition-colors"
             >
               {{ $t("header.tryFree") }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
 
           <!-- Mobile menu button -->
@@ -150,26 +149,26 @@
       <!-- Mobile menu -->
       <div :class="[mobileMenuOpen ? 'block' : 'hidden', 'md:hidden']">
         <div class="px-2 pt-2 pb-3 space-y-1">
-          <NuxtLink
-            :to="localePath('/features')"
+          <NuxtLinkLocale
+            to="features"
             class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary-500 hover:bg-neutral-100 transition-colors"
           >
             {{ $t("header.features") }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localePath('/pricing')"
+          </NuxtLinkLocale>
+          <NuxtLinkLocale
+            to="pricing"
             class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary-500 hover:bg-neutral-100 transition-colors"
           >
             {{ $t("header.pricing") }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localePath('/request-demo')"
+          </NuxtLinkLocale>
+          <NuxtLinkLocale
+            to="demo"
             class="block px-3 py-2 rounded-md text-base font-medium text-primary-500 hover:text-primary-600 transition-colors"
           >
             {{ $t("header.requestDemo") }}
-          </NuxtLink>
+          </NuxtLinkLocale>
           <NuxtLink
-            :to="localePath('/try-free')"
+            to="https://app3.test.zamdit.com/register/email"
             class="block px-3 py-2 rounded-md text-base font-medium bg-secondary hover:bg-secondary-600 text-neutral-900 transition-colors"
           >
             {{ $t("header.tryFree") }}
@@ -187,6 +186,7 @@
 const { t, locale, locales, setLocale } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 const localePath = useLocalePath();
+const router = useRouter();
 
 const mobileMenuOpen = ref(false);
 const showLanguageMenu = ref(false);
@@ -208,6 +208,12 @@ const availableLocales = computed(() =>
 
 const toggleLanguageMenu = () => {
   showLanguageMenu.value = !showLanguageMenu.value;
+};
+
+const switchLanguage = async (lang: "en" | "es") => {
+  toggleLanguageMenu();
+  await setLocale(lang);
+  router.push(localePath("/", lang));
 };
 
 // Handle scroll for hiding top bar

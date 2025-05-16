@@ -11,22 +11,22 @@
         background-position: bottom center, 50%, 50%;
       "
     >
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 animate-slide-up">
         <div class="flex flex-col lg:flex-row items-center">
           <div class="w-full lg:w-5/12">
             <h1
-              class="text-5xl font-heading font-bold text-center leading-tight mb-6 animate-slide-up"
+              class="text-5xl font-heading font-bold text-center leading-tight mb-6"
             >
               Smarter, faster hiring starts here
             </h1>
             <p
-              class="text-3xl text-center mb-8 animate-slide-up"
+              class="text-3xl text-center mb-8"
               style="animation-delay: 0.1s"
             >
               Your All-in-One Solution for Streamlined Recruitment
             </p>
             <div
-              class="flex justify-center space-y-4 animate-slide-up"
+              class="flex justify-center space-y-4"
               style="animation-delay: 0.2s"
             >
               <NuxtLink
@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="w-100 lg:w-7/12">
-            <img src="/images/home/hero.png" alt="Hero Image" class="p" />
+            <img src="/images/home/hero.png" alt="Hero Image" class="p-2" />
           </div>
         </div>
       </div>

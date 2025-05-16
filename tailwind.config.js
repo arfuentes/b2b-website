@@ -104,7 +104,7 @@ export default {
         "4xl": "2rem",
       },
       animation: {
-        "fade-in": "fadeIn 0.5s ease-in-out",
+        "fade-in": "fadeIn 1s ease-in-out",
         "slide-up": "slideUp 0.5s ease-in-out",
         "slide-down": "slideDown 0.5s ease-in-out",
       },

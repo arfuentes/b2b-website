@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "@pinia/nuxt",
+    "@vueuse/motion/nuxt",
   ],
   css: ["~/assets/css/main.css"],
 

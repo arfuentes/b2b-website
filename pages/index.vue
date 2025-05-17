@@ -4,9 +4,9 @@
     <section
       class="bg-alternate text-secondary-500 pt-16 pb-10 background-circle-effect"
     >
-      <div class="container mx-auto px-4 animate-slide-up">
+      <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center">
-          <div class="w-full lg:w-5/12" style="max-width: 600px">
+          <div class="w-full lg:w-5/12 animate-slide-up" style="max-width: 600px">
             <h1
               class="text-5xl text-secondary-700 font-heading font-bold text-center leading-tight mb-8"
             >
@@ -39,6 +39,8 @@
           </div>
           <div class="w-100 lg:w-7/12">
             <img
+              v-motion-fade-visible-once
+              :duration="1500"
               :src="`/images/home/${t('home.hero.image')}`"
               alt="Hero Image"
               class="p-2"
@@ -88,7 +90,8 @@
           ]"
         >
           <div
-            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-xl flex flex-col justify-start items-stretch"
+            v-motion-pop-visible-once
+            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-xl flex flex-col justify-start items-stretch transition duration-700"
           >
             <div class="flex flex-grow pb-4">
               <h3 class="self-end text-2xl">{{ feature.title }}</h3>
@@ -99,7 +102,11 @@
               </p>
             </div>
           </div>
-          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center">
+          <div
+            v-motion-fade-visible-once
+            :duration="1500"
+            class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center"
+          >
             <img
               :src="`/images/home/${feature.imageSrc}`"
               :alt="feature.title"

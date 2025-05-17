@@ -1,9 +1,9 @@
 <template>
-  <header class="fixed w-full top-0 z-50">
+  <header class="md:fixed w-full top-0 z-50">
     <!-- Top bar - hidden on scroll -->
     <div
       ref="topBar"
-      class="bg-neutral-100 text-secondary-500 py-1 transition-opacity duration-300 ease-in-out"
+      class="bg-neutral-100 text-secondary-500 py-1 transition-all duration-300 ease-in-out"
     >
       <div class="container mx-auto px-4">
         <div class="flex justify-end items-center space-x-4">
@@ -68,8 +68,8 @@
     </div>
 
     <!-- Main navigation -->
-    <nav class="bg-white shadow-md transition-transform duration-300">
-      <div class="container mx-auto px-4 py-3">
+    <nav class="bg-white shadow-md">
+      <div :class="['container mx-auto px-4 transition-all duration-500',  isShrunk ? 'py-3' : 'py-3 md:py-6']">
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <NuxtLinkLocale to="/" class="flex-shrink-0">
@@ -147,7 +147,7 @@
       </div>
 
       <!-- Mobile menu -->
-      <div :class="[mobileMenuOpen ? 'block' : 'hidden', 'md:hidden']">
+      <div :class="['transition-all duration-500', mobileMenuOpen ? 'block' : 'hidden', 'md:hidden']">
         <div class="px-2 pt-2 pb-3 space-y-1">
           <NuxtLinkLocale
             to="features"
@@ -220,11 +220,12 @@ const switchLanguage = async (lang: "en" | "es") => {
 
 let lastScrollPosition = 0;
 
+const isShrunk = ref(false);
+
 // Handle scroll for hiding top bar
 const handleScroll = () => {
   const currentScrollPosition = window.scrollY;
-
-  //if (currentScrollPosition < lastScrollPosition || currentScrollPosition < 50) {
+   //if (currentScrollPosition < lastScrollPosition || currentScrollPosition < 50) {
   if (currentScrollPosition < 28) {
     // Scrolling up or near top - show the bar
     if (topBar.value) {
@@ -238,6 +239,7 @@ const handleScroll = () => {
       // topBar.value.style.transform = 'translateY(-100%)';
     }
   }
+  isShrunk.value = window.scrollY >= 28;
 
   lastScrollPosition = currentScrollPosition;
 };

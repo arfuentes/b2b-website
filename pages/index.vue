@@ -6,7 +6,13 @@
     >
       <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center">
-          <div class="w-full lg:w-5/12 animate-slide-up" style="max-width: 600px">
+          <div
+            v-motion-slide-left-once
+            :delay="200"
+            :duration="1500"
+            class="w-full lg:w-5/12"
+            style="max-width: 600px"
+          >
             <h1
               class="text-5xl text-secondary-700 font-heading font-bold text-center leading-tight mb-8"
             >
@@ -39,7 +45,8 @@
           </div>
           <div class="w-100 lg:w-7/12">
             <img
-              v-motion-fade-visible-once
+              v-motion-slide-left-right
+              :delay="200"
               :duration="1500"
               :src="`/images/home/${t('home.hero.image')}`"
               alt="Hero Image"

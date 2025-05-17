@@ -7,7 +7,7 @@
       <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center">
           <div
-            v-motion-slide-left-once
+            v-motion-slide-left
             :delay="200"
             :duration="1500"
             class="w-full lg:w-5/12"
@@ -45,7 +45,7 @@
           </div>
           <div class="w-100 lg:w-7/12">
             <img
-              v-motion-slide-left-right
+              v-motion-slide-right
               :delay="200"
               :duration="1500"
               :src="`/images/home/${t('home.hero.image')}`"

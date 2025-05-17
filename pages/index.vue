@@ -1,61 +1,56 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section
-      class="bg-white text-secondary-500 py-16"
-      style="
-        background-color: #ecf3fa;
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgNTAnIHdpZHRoPScxMDAnIGhlaWdodD0nNTAnPjxjaXJjbGUgY2xhc3M9J2NpcmNsZScgZmlsbD0nd2hpdGUnIGN4PSc1MCcgY3k9Jy02MCcgcj0nMTAwJy8+PC9zdmc+');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: bottom center, 50%, 50%;
-      "
-    >
+    <section class="bg-white text-secondary-500 pt-16 pb-10 background-circle-effect">
       <div class="container mx-auto px-4 animate-slide-up">
         <div class="flex flex-col lg:flex-row items-center">
-          <div class="w-full lg:w-5/12">
+          <div class="w-full lg:w-5/12" style="max-width: 600px;">
             <h1
               class="text-5xl font-heading font-bold text-center leading-tight mb-6"
             >
-              Smarter, faster hiring starts here
+              {{ t("home.hero.title") }}
             </h1>
             <p class="text-3xl text-center mb-8" style="animation-delay: 0.1s">
-              Your All-in-One Solution for Streamlined Recruitment
+              {{ t("home.hero.subtitle") }}
             </p>
             <div
-              class="flex justify-center space-y-4"
+              class="flex justify-center space-y-4 pt-10"
               style="animation-delay: 0.2s"
             >
               <NuxtLink
-                to="https://app3.test.zamdit.com/register/email"
+                :to="tryAppUrl"
                 class="w-full bg-primary-500 hover:bg-secondary-500 text-white font-bold py-2 px-8 rounded-lg text-center transition-colors"
                 style="max-width: 320px"
               >
-                Start your Free Trial Today
+                {{ t("home.hero.ctaButton") }}
               </NuxtLink>
             </div>
             <div>
               <p class="text-center text-secondary-300">
-                No credit card required
+                {{ t("home.hero.creditCardMessage") }}
               </p>
             </div>
-            <div class="p-4 mt-4 flex justify-center">
-              <p class="text-lg text-secondary w-full" style="max-width: 320px">
-                Try <strong>Zamdit</strong> in Sample Data mode to test most of
-                the platform's features without needing to add data or invite
-                candidates.
-              </p>
+            <div class="p-4 mt-4 flex justify-center pt-4">
+              <p
+                class="text-lg text-secondary w-full"
+                style="max-width: 320px"
+                v-html="t('home.hero.message')"
+              ></p>
             </div>
           </div>
           <div class="w-100 lg:w-7/12">
-            <img src="/images/home/hero.png" alt="Hero Image" class="p-2" />
+            <img
+              :src="`/images/home/${t('home.hero.image')}`"
+              alt="Hero Image"
+              class="p-2"
+            />
           </div>
         </div>
       </div>
     </section>
 
     <!-- Trusted By Section -->
-    <section class="py-16 bg-alternate">
+    <section class="py-10 bg-alternate">
       <div class="container mx-auto px-4">
         <h2
           class="text-center text-2xl font-heading font-bold mb-12 text-neutral-800"
@@ -499,7 +494,7 @@
             {{ $t("header.requestDemo") }}
           </NuxtLinkLocale>
           <NuxtLink
-            to="https://app3.test.zamdit.com/register/email"
+            :to="tryAppUrl"
             class="bg-secondary-500 text-white font-bold hover:bg-secondary-600 py-3 px-8 rounded-md text-center transition-colors"
           >
             {{ $t("header.tryFree") }}
@@ -530,4 +525,6 @@ const logos = [
   "greenfield.png",
   "nexatech.png",
 ];
+
+const tryAppUrl = `${useRuntimeConfig().public.appBase}/register/email`;
 </script>

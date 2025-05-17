@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@pinia/nuxt",
   ],
+  css: ["~/assets/css/main.css"],
 
   // Google Fonts configuration
   googleFonts: {
@@ -26,6 +27,9 @@ export default defineNuxtConfig({
     strategy: "prefix_except_default",
     defaultLocale: "en",
     customRoutes: "config",
+    compilation: {
+      strictMessage: false,
+    },
     locales: [
       {
         code: "en",
@@ -134,7 +138,8 @@ export default defineNuxtConfig({
   // For API integration
   runtimeConfig: {
     public: {
-      apiBase: process.env.API_BASE_URL || "https://api.test.zamdit.com/web",
+      apiBase: process.env.API_BASE_URL || "https://api.zamdit.com/web",
+      appBase: process.env.APP_BASE_URL || "https://app.zamdit.com",
     },
   },
   gtag: {

@@ -26,10 +26,12 @@
   },
   "home": {
     "hero": {
-      "title": "Revoluciona Tu Proceso de Evaluación",
-      "subtitle": "La plataforma más completa para evaluar y gestionar candidatos",
-      "ctaButton": "Comenzar",
-      "secondaryButton": "Saber Más"
+      "title": "Contrata de forma más inteligente y rápida",
+      "subtitle": "Tu solución todo en uno para un reclutamiento más eficiente",
+      "ctaButton": "Comienza tu prueba gratuita hoy",
+      "creditCardMessage": "No se requiere tarjeta de crédito",
+      "message": "Prueba <strong>Zamdit</strong> en modo de datos de ejemplo y explora la mayoría de las funciones de la plataforma sin necesidad de cargar información ni invitar candidatos.",
+      "image": "hero-es.png"
     },
     "trustedBy": {
       "title": "Empresas que confían en nosotros"

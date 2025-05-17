@@ -8,7 +8,7 @@
       <div class="container mx-auto px-4">
         <div class="flex justify-end items-center space-x-4">
           <NuxtLink
-            to="https://app3.test.zamdit.com/auth/login"
+            :to="appLoginUrl"
             class="text-sm hover:text-primary-500 transition-colors"
           >
             {{ $t("header.login") }}
@@ -101,7 +101,7 @@
               {{ $t("header.requestDemo") }}
             </NuxtLinkLocale>
             <NuxtLinkLocale
-              to="https://app3.test.zamdit.com/register/email"
+              :to="tryAppUrl"
               class="bg-primary-500 font-bold border-2 border-primary-500 hover:bg-secondary-500 hover:border-secondary-500 text-white px-4 py-1 rounded-md transition-colors"
             >
               {{ $t("header.tryFree") }}
@@ -168,7 +168,7 @@
             {{ $t("header.requestDemo") }}
           </NuxtLinkLocale>
           <NuxtLink
-            to="https://app3.test.zamdit.com/register/email"
+            :to="tryAppUrl"
             class="block px-3 py-2 rounded-md text-base font-medium bg-secondary hover:bg-secondary-600 text-neutral-900 transition-colors"
           >
             {{ $t("header.tryFree") }}
@@ -184,7 +184,6 @@
 
 <script setup lang="ts">
 const { t, locale, locales, setLocale } = useI18n();
-const switchLocalePath = useSwitchLocalePath();
 const localePath = useLocalePath();
 const router = useRouter();
 
@@ -192,7 +191,6 @@ const mobileMenuOpen = ref(false);
 const showLanguageMenu = ref(false);
 const topBar = ref<HTMLElement | null>(null);
 const languageMenu = ref<HTMLElement | null>(null);
-let lastScrollPosition = 0;
 
 const currentLocale = computed(() => {
   return {
@@ -206,6 +204,10 @@ const availableLocales = computed(() =>
   locales.value.filter((l: any) => l.code !== locale.value)
 );
 
+const tryAppUrl = `${useRuntimeConfig().public.appBase}/register/email`;
+
+const appLoginUrl = `${useRuntimeConfig().public.appBase}/auth/login`;
+
 const toggleLanguageMenu = () => {
   showLanguageMenu.value = !showLanguageMenu.value;
 };
@@ -215,6 +217,8 @@ const switchLanguage = async (lang: "en" | "es") => {
   await setLocale(lang);
   router.push(localePath("/", lang));
 };
+
+let lastScrollPosition = 0;
 
 // Handle scroll for hiding top bar
 const handleScroll = () => {

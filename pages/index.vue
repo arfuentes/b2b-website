@@ -1,22 +1,21 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="bg-alternate text-secondary-500 pt-16 pb-10 background-circle-effect">
+    <section
+      class="bg-alternate text-secondary-500 pt-16 pb-10 background-circle-effect"
+    >
       <div class="container mx-auto px-4 animate-slide-up">
         <div class="flex flex-col lg:flex-row items-center">
-          <div class="w-full lg:w-5/12" style="max-width: 600px;">
+          <div class="w-full lg:w-5/12" style="max-width: 600px">
             <h1
-              class="text-5xl font-heading font-bold text-center leading-tight mb-8"
+              class="text-5xl text-secondary-700 font-heading font-bold text-center leading-tight mb-8"
             >
               {{ t("home.hero.title") }}
             </h1>
-            <p class="text-3xl text-center mb-8" style="animation-delay: 0.1s">
+            <p class="text-3xl text-center mb-8">
               {{ t("home.hero.subtitle") }}
             </p>
-            <div
-              class="flex justify-center space-y-4 pt-10"
-              style="animation-delay: 0.2s"
-            >
+            <div class="flex justify-center space-y-4 pt-10">
               <NuxtLink
                 :to="tryAppUrl"
                 class="w-full text-lg bg-primary-500 hover:bg-secondary-500 text-white font-bold py-2 px-8 rounded-md text-center transition-colors"
@@ -53,15 +52,15 @@
     <section class="py-10 bg-alternate">
       <div class="container mx-auto px-4">
         <h2
-          class="text-center text-2xl font-heading font-bold mb-12 text-neutral-800"
+          class="text-center text-2xl font-heading font-bold mb-10 text-secondary-600"
         >
-          {{ $t("home.trustedBy.title") }}
+          {{ $t("home.builtFor.title") }}
         </h2>
-        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-4">
           <div v-for="logo in logos" :key="logo" class="flex p-1">
             <img
               :src="`/images/partners/${logo}`"
-              class="w-full max-w-full max-h-8 self-center object-cover object-center opacity-50 hover:opacity-100 transition-opacity"
+              class="w-full max-w-full max-h-8 self-center object-cover object-center opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-opacity"
             />
           </div>
         </div>
@@ -519,11 +518,12 @@ const features = computed(() =>
 
 const logos = [
   "fullcomms.png",
-  "nibcode.png",
-  "klixel.png",
+  "strata.png",
+  "kenton.png",
+  "immersive.png",
+  "nexa.png",
   "kpro.png",
-  "greenfield.png",
-  "nexatech.png",
+  "verda.png",
 ];
 
 const tryAppUrl = `${useRuntimeConfig().public.appBase}/register/email`;

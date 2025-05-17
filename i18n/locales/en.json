@@ -33,8 +33,9 @@
       "message": "Try <strong>Zamdit</strong> in Sample Data mode to test most of the platform's features without needing to add data or invite candidates.",
       "image": "hero.png"
     },
-    "trustedBy": {
-      "title": "Loved by 500+ companies"
+    "builtFor": {
+      "title": "Built for Modern Hiring Teams",
+      "subtitle": "Designed to streamline recruitment for startups, growing businesses, and recruitment agencies"
     },
     "features": {
       "title": "Everything you need to hire with confidence",

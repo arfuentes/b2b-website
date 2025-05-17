@@ -34,31 +34,29 @@
       "image": "hero-es.png"
     },
     "builtFor": {
-      "title": "Diseñado para equipos de contratación modernos",
-      "subtitle": "Designed to streamline recruitment for startups, growing businesses, and recruitment agencies"
+      "title": "Diseñado para equipos de contratación modernos"
     },
     "features": {
-      "title": "Por qué elegir nuestra plataforma",
-      "subtitle": "Proporcionamos todo lo que necesitas para optimizar tu flujo de evaluación",
+      "title": "Todo lo que necesitas para contratar con confianza",
       "feature1": {
         "image": "centralized-hiring-hub.png",
-        "title": "Centralized Hiring Hub",
-        "text": "Manage all your hiring activities in one place. From posting jobs to scheduling interviews, Zamdit simplifies your hiring workflow, allowing your team to collaborate easily, track candidate progress, and share notes, all within one dashboard."
+        "title": "Centro de Contratación Centralizado",
+        "text": "Gestiona todas tus actividades de contratación en un solo lugar. Desde publicar ofertas hasta agendar entrevistas, Zamdit simplifica tu flujo de trabajo, permitiendo que tu equipo colabore fácilmente, siga el progreso de los candidatos y comparta notas, todo desde un único panel."
       },
       "feature2": {
         "image": "automated-hiring-processes.png",
-        "title": "Fast and Automated Hiring Processes",
-        "text": "Move candidates through the hiring process faster than ever. Automated assessments, reminders, and streamlined approvals save valuable time, so your team can focus on making the right hiring decisions."
+        "title": "Procesos de Contratación Rápidos y Automatizados",
+        "text": "Avanza a los candidatos en el proceso de selección más rápido que nunca. Evaluaciones automáticas, recordatorios y aprobaciones optimizadas ahorran tiempo valioso, para que tu equipo pueda enfocarse en tomar las mejores decisiones de contratación."
       },
       "feature3": {
         "image": "thorough-candidate-evaluations.png",
-        "title": "Thorough Candidate Evaluations",
-        "text": "Make hiring decisions with confidence using tools for in-depth candidate evaluations. Use Zamdit's customizable scorecards, detailed comparison tools, and automated evaluation summaries to deeply analyze candidate suitability."
+        "title": "Evaluaciones Exhaustivas de Candidatos",
+        "text": "Toma decisiones de contratación con confianza usando herramientas para evaluaciones profundas. Aprovecha las hojas de puntuación personalizables de Zamdit, herramientas de comparación detalladas y resúmenes automatizados para analizar a fondo la idoneidad de cada candidato."
       },
       "feature4": {
         "image": "career-portal-builder.png",
-        "title": "No-Code Career Portal Builder",
-        "text": "Attract quality talent with a branded, no-code career portal. Easily create and update your portal to showcase open positions, company culture, and growth opportunities to stand out in a competitive hiring landscape."
+        "title": "Creador de Portales de Empleo sin Código",
+        "text": "Atrae talento de calidad con un portal de empleo personalizado y sin necesidad de programar. Crea y actualiza fácilmente tu portal para mostrar vacantes, cultura de empresa y oportunidades de crecimiento, y destacar en un mercado competitivo."
       }
     },
     "video": {

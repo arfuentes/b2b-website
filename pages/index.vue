@@ -48,7 +48,7 @@
       </div>
     </section>
 
-    <!-- Trusted By Section -->
+    <!-- Built For Section -->
     <section class="py-10 bg-alternate">
       <div class="container mx-auto px-4">
         <h2
@@ -56,7 +56,9 @@
         >
           {{ $t("home.builtFor.title") }}
         </h2>
-        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-4">
+        <div
+          class="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-4"
+        >
           <div v-for="logo in logos" :key="logo" class="flex p-1">
             <img
               :src="`/images/partners/${logo}`"
@@ -72,15 +74,11 @@
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2
-            class="text-3xl md:text-4xl font-heading font-bold mb-4 text-neutral-800"
+            class="text-3xl md:text-4xl font-heading font-bold mb-4 text-secondary-500"
           >
             {{ $t("home.features.title") }}
           </h2>
-          <p class="text-xl text-neutral-600 max-w-3xl mx-auto">
-            {{ $t("home.features.subtitle") }}
-          </p>
         </div>
-
         <div
           v-for="(feature, index) in features"
           :key="index"
@@ -90,10 +88,10 @@
           ]"
         >
           <div
-            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-2xl flex flex-col justify-start items-stretch"
+            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-xl flex flex-col justify-start items-stretch"
           >
             <div class="flex flex-grow pb-4">
-              <h3 class="self-end">{{ feature.title }}</h3>
+              <h3 class="self-end text-2xl">{{ feature.title }}</h3>
             </div>
             <div class="flex flex-grow">
               <p class="self-start pb-2">

@@ -34,12 +34,10 @@
       "image": "hero.png"
     },
     "builtFor": {
-      "title": "Built for Modern Hiring Teams",
-      "subtitle": "Designed to streamline recruitment for startups, growing businesses, and recruitment agencies"
+      "title": "Built for Modern Hiring Teams"
     },
     "features": {
       "title": "Everything you need to hire with confidence",
-      "subtitle": "We provide everything you need to streamline your hiring workflow",
       "feature1": {
         "image": "centralized-hiring-hub.png",
         "title": "Centralized Hiring Hub",

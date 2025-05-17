@@ -1,12 +1,12 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="bg-white text-secondary-500 pt-16 pb-10 background-circle-effect">
+    <section class="bg-alternate text-secondary-500 pt-16 pb-10 background-circle-effect">
       <div class="container mx-auto px-4 animate-slide-up">
         <div class="flex flex-col lg:flex-row items-center">
           <div class="w-full lg:w-5/12" style="max-width: 600px;">
             <h1
-              class="text-5xl font-heading font-bold text-center leading-tight mb-6"
+              class="text-5xl font-heading font-bold text-center leading-tight mb-8"
             >
               {{ t("home.hero.title") }}
             </h1>
@@ -19,21 +19,21 @@
             >
               <NuxtLink
                 :to="tryAppUrl"
-                class="w-full bg-primary-500 hover:bg-secondary-500 text-white font-bold py-2 px-8 rounded-lg text-center transition-colors"
-                style="max-width: 320px"
+                class="w-full text-lg bg-primary-500 hover:bg-secondary-500 text-white font-bold py-2 px-8 rounded-md text-center transition-colors"
+                style="max-width: 360px"
               >
                 {{ t("home.hero.ctaButton") }}
               </NuxtLink>
             </div>
             <div>
-              <p class="text-center text-secondary-300">
+              <p class="text-center text-neutral-400 pt-1">
                 {{ t("home.hero.creditCardMessage") }}
               </p>
             </div>
             <div class="p-4 mt-4 flex justify-center pt-4">
               <p
-                class="text-lg text-secondary w-full"
-                style="max-width: 320px"
+                class="text-lg text-secondary w-full text-justify"
+                style="max-width: 360px"
                 v-html="t('home.hero.message')"
               ></p>
             </div>

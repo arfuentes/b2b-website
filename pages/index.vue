@@ -165,6 +165,8 @@
           <div
             v-for="(testimonial, index) in testimonials"
             :key="index"
+            v-motion-pop-visible-once
+            :duration="(index + 1) * 500"
             :class="[
               'bg-white p-6 rounded-lg border-2 border-secondary-500 flex flex-col justify-between h-full',
               index > 2 ? 'hidden sm:flex md:flex lg:hidden' : '',

@@ -166,17 +166,17 @@
             v-for="(testimonial, index) in testimonials"
             :key="index"
             :class="[
-              'bg-white p-6 rounded-lg border-2 border-secondary-500 flex flex-row flex-wrap items-stretch place-content-between place-content-stretch',
-              index > 2 ? 'hidden sm:block md:block lg:hidden' : '',
+              'bg-white p-6 rounded-lg border-2 border-secondary-500 flex flex-col justify-between h-full',
+              index > 2 ? 'hidden sm:flex md:flex lg:hidden' : '',
             ]"
           >
-            <h3 class="font-heading font-bold mb-4 text-neutral-800">
-              {{ testimonial.title }}
-            </h3>
-            <div>
+            <div class="mb-4">
+              <h3 class="font-heading font-bold mb-4 text-neutral-800">
+                {{ testimonial.title }}
+              </h3>
               <p class="text-neutral-600 italic">"{{ testimonial.text }}"</p>
             </div>
-            <div class="flex w-full justify-between items-center mt-4">
+            <div class="flex w-full justify-between items-center">
               <div class="flex-grow">
                 <div class="font-lg font-bold text-neutral-800">
                   {{ testimonial.name }}
@@ -188,11 +188,11 @@
                   {{ testimonial.company }}
                 </div>
               </div>
-              <div>
+              <div class="ml-4 flex-shrink-0">
                 <img
                   :src="`/images/testimonials/${testimonial.logoSrc}`"
                   :alt="testimonial.company"
-                  class="w-full max-h-[50px] self-center object-contain"
+                  class="w-auto max-h-[50px] object-contain"
                 />
               </div>
             </div>

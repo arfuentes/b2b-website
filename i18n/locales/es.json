@@ -64,7 +64,38 @@
     },
     "testimonials": {
       "title": "Lo que dicen nuestros clientes",
-      "subtitle": "Únete a miles de clientes satisfechos en todo el mundo"
+      "card1": {
+        "title": "A Game-Changer for Our Hiring Process",
+        "text": "We reduced our time-to-hire by 50% after switching to Zamdit. The platform's intuitive interface and automation features have made our recruitment process more efficient than ever. I can’t imagine going back to our old methods.",
+        "name": "Sophie Richards",
+        "position": "HR Director",
+        "company": "Vertex Inc.",
+        "logo": "vertex.png"
+      },
+      "card2": {
+        "title": "Efficient and Reliable",
+        "text": "Using Zamdit has streamlined every step of our hiring process. From automated reminders to detailed candidate evaluation tools, everything works seamlessly. It’s refreshing to see a tool that truly understands what recruiters need.",
+        "name": "Lisa Thompson",
+        "position": "Talent Acquisition Manager",
+        "company": "BrightPath Tech",
+        "logo": "brightpath.png"
+      },
+      "card3": {
+        "title": "Simplifies Team Collaboration",
+        "text": "Zamdit has made it so much easier for our hiring team to work together. The ability to share notes, scorecards, and candidate updates in real-time has eliminated confusion and saved us a lot of back-and-forth emails. It’s truly a collaborative tool that keeps everyone on the same page.",
+        "name": "Michael Rivera",
+        "position": "Recruitment Specialist",
+        "company": "Greenfield Solutions",
+        "logo": "greenfield.png"
+      },
+      "card4": {
+        "title": "Customizable and User-Friendly",
+        "text": "I love how flexible Zamdit is! The no-code career portal builder allowed us to create a branded, professional portal in no time. It’s so user-friendly that even my less tech-savvy colleagues find it easy to navigate and use.",
+        "name": "Daniel Nguyen",
+        "position": "Hiring Manager",
+        "company": "Summit Corp",
+        "logo": "summit.png"
+      }
     },
     "security": {
       "title": "Seguridad de nivel empresarial",

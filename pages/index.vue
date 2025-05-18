@@ -7,7 +7,7 @@
       <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center">
           <div
-            v-motion-slide-left
+            v-motion-slide-visible-once-left
             :delay="200"
             :duration="1500"
             class="w-full lg:w-5/12"
@@ -45,7 +45,7 @@
           </div>
           <div class="w-100 lg:w-7/12">
             <img
-              v-motion-slide-right
+              v-motion-slide-visible-once-right
               :delay="200"
               :duration="1500"
               :src="`/images/home/${t('home.hero.image')}`"
@@ -131,42 +131,19 @@
           <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
             {{ $t("home.video.title") }}
           </h2>
-          <p class="text-xl text-neutral-300 max-w-3xl mx-auto">
-            {{ $t("home.video.subtitle") }}
-          </p>
         </div>
 
-        <div
-          class="max-w-4xl mx-auto relative rounded-lg overflow-hidden shadow-2xl"
-        >
-          <div
-            class="aspect-w-16 aspect-h-9 bg-neutral-800 flex items-center justify-center"
-          >
-            <!-- Video thumbnail -->
-            <img
-              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
-              alt="Video Thumbnail"
-              class="w-full h-full object-cover"
-            />
-
-            <!-- Play button overlay -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <button
-                class="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors transform hover:scale-110 duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-10 w-10 text-white"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
+        <div class="relative rounded-lg overflow-hidden shadow-xl">
+          <div class="p-5 flex items-center justify-center">
+            <div class="relative w-full pb-[56.25%] h-0">
+              <iframe
+                class="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/JsftIRGMUfk"
+                title="YouTube video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
         </div>

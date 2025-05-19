@@ -213,7 +213,12 @@
     "noResultMessage": "Ningún artículo coincide con tu búsqueda.",
     "noResultTip": "Prueba con otras palabras clave o vuelve a la ",
     "fullList": "lista completa",
-    "fromTo": "{from} - {to} de {total}"
+    "fromTo": "{from} - {to} de {total}",
+    "postErrorMessage": "Ocurrió un error al cargar el artículo. Por favor, intenta de nuevo más tarde.",
+    "back": "Atrás al blog",
+    "share": "Compartir",
+    "home": "Inicio",
+    "blog": "Blog"
   },
   "imageCta": {
     "title": "Contrata de forma más inteligente y rápida",

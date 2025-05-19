@@ -213,7 +213,12 @@
     "noResultMessage": "No blog posts match your search.",
     "noResultTip": "Try using different keywords or go back to the ",
     "fullList": "full list",
-    "fromTo": "{from} - {to} of {total}"
+    "fromTo": "{from} - {to} of {total}",
+    "postErrorMessage": "Something went wrong while loading the post. Please try again later.",
+    "back": "Back to blog",
+    "share": "Share",
+    "home": "Home",
+    "blog": "Blog"
   },
   "imageCta": {
     "title": "Smarter, faster hiring starts here",

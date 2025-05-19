@@ -33,37 +33,37 @@
         </svg>
       </div>
       <p class="text-lg text-neutral-600 mb-4">
-        {{ error }}
+        {{ $t("blog.postErrorMessage") }}
       </p>
       <NuxtLinkLocale
         to="blog"
         class="text-primary-500 font-medium hover:text-primary-600 transition-colors"
       >
-        {{ $t("common.back") }} to Blog
+        {{ $t("blog.back") }}
       </NuxtLinkLocale>
     </div>
 
     <!-- Blog Post Content -->
-    <div v-else-if="post" class="min-h-screen bg-neutral-50">
+    <div v-else-if="post" class="min-h-screen bg-white">
       <!-- Header Section -->
-      <div class="bg-white border-b border-neutral-200 py-12">
+      <div class="bg-alternate pt-16 pb-8">
         <div class="container mx-auto px-4">
-          <div class="flex flex-col lg:flex-row gap-8">
+          <div class="flex flex-col sm:flex-row gap-4 lg:gap-8">
             <!-- Left Column -->
-            <div class="lg:w-1/2">
+            <div class="sm:w-1/2 md:w-7/12">
               <!-- Breadcrumb -->
               <nav class="flex items-center space-x-2 text-sm mb-6">
                 <NuxtLinkLocale
                   to="/"
                   class="text-neutral-500 hover:text-primary-500"
                 >
-                  Home
+                  {{ $t("blog.home") }}
                 </NuxtLinkLocale>
                 <span class="text-neutral-400">/</span>
                 <NuxtLinkLocale
                   to="blog"
                   class="text-neutral-500 hover:text-primary-500"
-                  >Blog</NuxtLinkLocale
+                  >{{ $t("blog.blog") }}</NuxtLinkLocale
                 >
                 <span class="text-neutral-400">/</span>
                 <NuxtLinkLocale
@@ -79,7 +79,7 @@
 
               <!-- Title -->
               <h1
-                class="text-3xl lg:text-4xl font-heading font-bold mb-4 text-neutral-800"
+                class="text-3xl lg:text-4xl font-heading font-bold mb-6 text-neutral-800"
               >
                 {{ post.title }}
               </h1>
@@ -104,26 +104,28 @@
               </div>
 
               <!-- Share Section -->
-              <div class="flex items-center space-x-4">
-                <span class="text-neutral-600">Share:</span>
-                <button
-                  v-for="network in shareNetworks"
-                  :key="network.name"
-                  @click="sharePost(network.url)"
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-neutral-100 hover:bg-primary-500 hover:text-white transition-colors"
-                  :aria-label="`Share on ${network.name}`"
-                >
-                  <SocialIcon :name="network.icon" />
-                </button>
-              </div>
+              <ClientOnly>
+                <div class="flex items-center space-x-2">
+                  <span class="text-neutral-600">{{ $t("blog.share") }}:</span>
+                  <button
+                    v-for="network in shareNetworks"
+                    :key="network.name"
+                    @click="sharePost(network.url)"
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-neutral-100 hover:bg-primary-500 hover:text-white transition-colors"
+                    :aria-label="`Share on ${network.name}`"
+                  >
+                    <SocialIcon :name="network.icon" />
+                  </button>
+                </div>
+              </ClientOnly>
             </div>
 
             <!-- Right Column - Featured Image -->
-            <div class="lg:w-1/2">
+            <div class="sm:w-1/2 md:w-5/12">
               <img
                 :src="post.image.url"
                 :alt="post.title"
-                class="w-full h-[400px] object-cover rounded-lg shadow-lg"
+                class="w-full h-full self-start object-cover rounded-md"
               />
             </div>
           </div>
@@ -132,81 +134,53 @@
 
       <!-- Main Content -->
       <div class="container mx-auto px-4 py-12">
-        <div class="max-w-3xl mx-auto">
-          <!-- Post Content -->
-          <div
-            class="prose prose-lg max-w-none mb-12"
-            v-html="post.content"
-          ></div>
+        <!-- Post Content -->
+        <div class="blog-content mb-12" v-html="post.content"></div>
 
-          <!-- Related Posts -->
-          <div v-if="post.relatedPosts?.length > 0">
-            <h2 class="text-2xl font-heading font-bold mb-6">
-              {{ $t("blog.relatedPosts") }}
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <BlogCard
-                v-for="relatedPost in post.relatedPosts"
-                :key="relatedPost.id"
-                :post="relatedPost"
-              />
-            </div>
+        <!-- Related Posts -->
+        <div
+          v-if="post.relatedPosts?.length > 0"
+          class="border-t border-neutral-200 pt-12"
+        >
+          <h2 class="text-2xl font-heading font-bold mb-6">
+            {{ $t("blog.relatedPosts") }}
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <BlogCard
+              v-for="relatedPost in post.relatedPosts"
+              :key="relatedPost.id"
+              :post="relatedPost"
+            />
           </div>
         </div>
       </div>
     </div>
+
+    <ImageCta />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useAsyncData } from "#app";
-import { useApi } from "~/composables/useApi";
+import { useApi, type BlogPost } from "~/composables/useApi";
+
+const { locale } = useI18n();
 
 const route = useRoute();
-const localePath = useLocalePath();
-const { headers } = useApi();
 
-interface Post {
-  id: number;
-  title: string;
-  slug: string;
-  content: string;
-  image: {
-    url: string;
-  };
-  category: {
-    id: number;
-    name: string;
-    slug: string;
-  };
-  author: {
-    id: number;
-    name: string;
-    image: {
-      url: string;
-    };
-  };
-  publishedAt: string;
-  relatedPosts?: Post[];
-}
+const slug = computed(() => route.params.slug);
+
+const { headers } = useApi();
 
 const {
   data: post,
   pending,
   error,
-} = await useAsyncData<Post>(
-  "blog-post",
+} = await useAsyncData<BlogPost>(
+  () => `blog-post-${slug.value}`,
   () =>
-    $fetch(
-      `${useRuntimeConfig().public.apiBaseUrl}/posts/slug/${route.params.slug}`,
-      {
-        headers,
-      }
-    ),
-  {
-    server: false,
-  }
+    $fetch(`${useRuntimeConfig().public.apiBaseUrl}/posts/slug/${slug.value}`, {
+      headers,
+    })
 );
 
 const shareNetworks = computed(() => {
@@ -236,7 +210,7 @@ const shareNetworks = computed(() => {
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
-  return new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat(locale.value === "es" ? "es-ES" : "en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",

@@ -96,7 +96,7 @@
               {{ $t("header.pricing") }}
             </NuxtLinkLocale>
             <NuxtLinkLocale
-              to="aboutUs"
+              to="about"
               class="text-neutral-700 hover:text-primary-500 transition-colors"
             >
               {{ $t("header.aboutUs") }}

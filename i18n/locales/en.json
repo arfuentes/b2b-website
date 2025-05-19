@@ -3,6 +3,7 @@
     "login": "Login",
     "features": "Features",
     "pricing": "Pricing",
+    "aboutUs": "About us",
     "requestDemo": "Request a Demo",
     "tryFree": "Try for Free!"
   },
@@ -20,7 +21,7 @@
     "aboutAssessments": "About Assessments",
     "aboutQuestionnaires": "About Questionnaires",
     "followUs": "Follow Us",
-    "copyright": "All rights reserved.",
+    "copyright": "Zamdit — All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   },

@@ -69,7 +69,12 @@
 
     <!-- Main navigation -->
     <nav class="bg-white shadow-md">
-      <div :class="['container mx-auto px-4 transition-all duration-500',  isShrunk ? 'py-3' : 'py-3 md:py-6']">
+      <div
+        :class="[
+          'container mx-auto px-4 transition-all duration-500',
+          isShrunk ? 'py-3' : 'py-3 md:py-6',
+        ]"
+      >
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <NuxtLinkLocale to="/" class="flex-shrink-0">
@@ -77,7 +82,7 @@
           </NuxtLinkLocale>
 
           <!-- Navigation Links -->
-          <div class="hidden md:flex text-lg items-center space-x-8">
+          <div class="hidden sm:flex text-lg items-center space-x-8">
             <NuxtLinkLocale
               to="features"
               class="text-neutral-700 hover:text-primary-500 transition-colors"
@@ -90,7 +95,15 @@
             >
               {{ $t("header.pricing") }}
             </NuxtLinkLocale>
+            <NuxtLinkLocale
+              to="aboutUs"
+              class="text-neutral-700 hover:text-primary-500 transition-colors"
+            >
+              {{ $t("header.aboutUs") }}
+            </NuxtLinkLocale>
           </div>
+
+          <span class="hidden sm:inline md:hidden w-1"></span>
 
           <!-- CTA Buttons -->
           <div class="hidden md:flex items-center space-x-4">
@@ -111,7 +124,7 @@
           <!-- Mobile menu button -->
           <button
             @click="mobileMenuOpen = !mobileMenuOpen"
-            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-neutral-700 hover:text-primary-500 hover:bg-neutral-100 transition-colors"
+            class="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-neutral-700 hover:text-primary-500 hover:bg-neutral-100 transition-colors"
           >
             <span class="sr-only">Open main menu</span>
             <svg
@@ -147,39 +160,39 @@
       </div>
 
       <!-- Mobile menu -->
-      <div :class="['transition-all duration-500', mobileMenuOpen ? 'block' : 'hidden', 'md:hidden']">
+      <div
+        :class="[
+          'transition-all duration-500',
+          mobileMenuOpen ? 'block' : 'hidden',
+          'sm:hidden',
+        ]"
+      >
         <div class="px-2 pt-2 pb-3 space-y-1">
           <NuxtLinkLocale
             to="features"
-            class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary-500 hover:bg-neutral-100 transition-colors"
+            class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 text-lg hover:text-primary-500 hover:bg-neutral-100 transition-colors"
           >
             {{ $t("header.features") }}
           </NuxtLinkLocale>
           <NuxtLinkLocale
             to="pricing"
-            class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary-500 hover:bg-neutral-100 transition-colors"
+            class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 text-lg hover:text-primary-500 hover:bg-neutral-100 transition-colors"
           >
             {{ $t("header.pricing") }}
           </NuxtLinkLocale>
           <NuxtLinkLocale
-            to="demo"
-            class="block px-3 py-2 rounded-md text-base font-medium text-primary-500 hover:text-primary-600 transition-colors"
+            to="aboutUs"
+            class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 text-lg hover:text-primary-500 hover:bg-neutral-100 transition-colors"
           >
-            {{ $t("header.requestDemo") }}
+            {{ $t("header.aboutUs") }}
           </NuxtLinkLocale>
-          <NuxtLink
-            :to="tryAppUrl"
-            class="block px-3 py-2 rounded-md text-base font-medium bg-secondary hover:bg-secondary-600 text-neutral-900 transition-colors"
-          >
-            {{ $t("header.tryFree") }}
-          </NuxtLink>
         </div>
       </div>
     </nav>
   </header>
 
   <!-- Spacer to prevent content from being hidden under fixed header -->
-  <div class="sm:h-[92px]"></div>
+  <div class="md:h-[92px]"></div>
 </template>
 
 <script setup lang="ts">
@@ -225,7 +238,7 @@ const isShrunk = ref(false);
 // Handle scroll for hiding top bar
 const handleScroll = () => {
   const currentScrollPosition = window.scrollY;
-   //if (currentScrollPosition < lastScrollPosition || currentScrollPosition < 50) {
+  //if (currentScrollPosition < lastScrollPosition || currentScrollPosition < 50) {
   if (currentScrollPosition < 28) {
     // Scrolling up or near top - show the bar
     if (topBar.value) {

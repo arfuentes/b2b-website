@@ -2,7 +2,7 @@
   <div>
     <!-- Hero Section -->
     <section
-      class="bg-alternate text-secondary-500 pt-16 pb-10 background-circle-effect"
+      class="bg-alternate text-secondary-500 pt-10 pb-6 sm:pt-16 sm:pb-10 background-circle-effect"
     >
       <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center">
@@ -14,14 +14,14 @@
             style="max-width: 600px"
           >
             <h1
-              class="text-5xl text-secondary-700 font-heading font-bold text-center leading-tight mb-8"
+              class="text-4xl sm:text-5xl text-secondary-700 font-heading font-bold text-center leading-tight mb-6 sm:mb-8"
             >
               {{ t("home.hero.title") }}
             </h1>
-            <p class="text-3xl text-center mb-8">
+            <p class="text-2xl sm:text-3xl text-center mb-6 sm:mb-8">
               {{ t("home.hero.subtitle") }}
             </p>
-            <div class="flex justify-center space-y-4 pt-10">
+            <div class="flex justify-center space-y-4 pt-6 sm:pt-10">
               <NuxtLink
                 :to="tryAppUrl"
                 class="w-full text-lg bg-primary-500 hover:bg-secondary-500 text-white font-bold py-2 px-8 rounded-md text-center transition-colors"
@@ -58,7 +58,7 @@
     </section>
 
     <!-- Built For Section -->
-    <section class="py-10 bg-alternate">
+    <section class="py-5 sm:py-10 bg-alternate">
       <div class="container mx-auto px-4">
         <h2
           class="text-center text-2xl font-heading font-bold mb-10 text-secondary-500"
@@ -79,9 +79,9 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-20 bg-white">
+    <section class="py-10 sm:py-20 bg-white">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
+        <div class="text-center mb-6 sm:mb-16">
           <h2
             class="text-3xl md:text-4xl font-heading font-bold text-secondary-500"
           >
@@ -126,9 +126,9 @@
     </section>
 
     <!-- Video Section -->
-    <section class="py-20 bg-neutral-900">
+    <section class="py-10 sm:py-20 bg-neutral-900">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
+        <div class="text-center mb-6 sm:mb-16">
           <h2 class="text-3xl md:text-4xl font-heading font-bold text-white">
             {{ $t("home.video.title") }}
           </h2>
@@ -152,9 +152,9 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-alternate">
+    <section class="py-10 sm:py-20 bg-alternate">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
+        <div class="text-center mb-6 sm:mb-16">
           <h2
             class="text-3xl md:text-4xl font-heading font-bold text-secondary-500"
           >
@@ -174,7 +174,7 @@
             ]"
           >
             <div class="mb-4">
-              <h3 class="font-heading font-bold mb-16 text-neutral-800">
+              <h3 class="font-heading font-bold mb-4 text-neutral-800">
                 {{ testimonial.title }}
               </h3>
               <p class="text-neutral-600 italic">"{{ testimonial.text }}"</p>
@@ -205,9 +205,9 @@
     </section>
 
     <!-- Security Section -->
-    <section class="py-20 bg-white">
+    <section class="py-10 sm:py-20 bg-white">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
+        <div class="text-center mb-6 sm:mb-16">
           <h2
             class="text-3xl md:text-4xl font-heading font-bold text-secondary-500"
           >

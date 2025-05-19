@@ -3,6 +3,7 @@
     "login": "Iniciar sesión",
     "features": "Características",
     "pricing": "Precios",
+    "aboutUs": "Sobre nosotros",
     "requestDemo": "Solicitar una Demo",
     "tryFree": "¡Prueba Gratis!"
   },
@@ -20,7 +21,7 @@
     "aboutAssessments": "Sobre las Evaluaciones",
     "aboutQuestionnaires": "Sobre los Cuestionarios",
     "followUs": "Síguenos",
-    "copyright": "Todos los derechos reservados.",
+    "copyright": "Zamdit — Todos los derechos reservados.",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio"
   },
@@ -98,12 +99,15 @@
       }
     },
     "security": {
-      "title": "Seguridad de nivel empresarial",
-      "subtitle": "Tus datos están seguros con nosotros",
-      "feature1": "Cumplimiento SOC 2 Tipo II",
-      "feature2": "Preparado para GDPR",
-      "feature3": "Cifrado de extremo a extremo",
-      "feature4": "Auditorías de seguridad regulares"
+      "title": "Tus datos están seguros con nosotros",
+      "introduction": "En Zamdit, damos máxima prioridad a la seguridad y privacidad de tus datos. Nuestra plataforma está construida sobre una infraestructura en la nube confiable y de clase mundial, lo que garantiza que tu información esté siempre protegida y accesible cuando la necesites.",
+      "point1Title": "Medidas de Seguridad Avanzadas",
+      "point1Text": "Zamdit utiliza cifrado con estándares de la industria y conexiones seguras para proteger tus datos contra accesos no autorizados.",
+      "point2Title": "Cumplimiento con el RGPD",
+      "point2Text": "Cumplimos con estrictas regulaciones de protección de datos para resguardar la información de candidatos y organizaciones.",
+      "point3Title": "Monitoreo y Auditorías Constantes",
+      "point3Text": "Nuestro equipo realiza un monitoreo continuo y auditorías de seguridad para mantener los más altos estándares de seguridad y confiabilidad.",
+      "conclusion": "Con Zamdit, puedes enfocarte en contratar al mejor talento mientras nosotros nos encargamos de proteger tu información."
     }
   },
   "requestDemo": {

@@ -58,7 +58,7 @@ export const useApi = () => {
   const error = ref<string | null>(null)
 
   const API_KEY = '75a0fd6ca08ff568110e6c8c23c197f1'
-  const BASE_URL = useRuntimeConfig().public.apiBase
+  const BASE_URL = useRuntimeConfig().public.apiBaseUrl
 
   const headers = {
     'X-Api-Key': API_KEY,

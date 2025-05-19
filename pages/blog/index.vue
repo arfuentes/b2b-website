@@ -128,7 +128,7 @@ const { headers } = useApi()
 
 const { data: posts, pending, error, refresh } = await useAsyncData<BlogResponse>(
   () => `blog-posts-${currentPage.value}-${searchQuery.value}`,
-  () => $fetch(`${useRuntimeConfig().public.apiBase}/posts`, {
+  () => $fetch(`${useRuntimeConfig().public.apiBaseUrl}/posts`, {
     params: {
       page: currentPage.value,
       size: 6,

@@ -132,7 +132,7 @@
 </template>
 
 <script setup>
-const tryAppUrl = `${useRuntimeConfig().public.appBase}/register/email`;
+const tryAppUrl = `${useRuntimeConfig().public.webappBaseUrl}/register/email`;
 const socialIcons = [
   {
     name: "linkedin",

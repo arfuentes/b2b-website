@@ -217,9 +217,9 @@ const availableLocales = computed(() =>
   locales.value.filter((l: any) => l.code !== locale.value)
 );
 
-const tryAppUrl = `${useRuntimeConfig().public.appBase}/register/email`;
+const tryAppUrl = `${useRuntimeConfig().public.webappBaseUrl}/register/email`;
 
-const appLoginUrl = `${useRuntimeConfig().public.appBase}/auth/login`;
+const appLoginUrl = `${useRuntimeConfig().public.webappBaseUrl}/auth/login`;
 
 const toggleLanguageMenu = () => {
   showLanguageMenu.value = !showLanguageMenu.value;

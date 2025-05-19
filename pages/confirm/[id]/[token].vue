@@ -48,7 +48,7 @@ const { headers } = useApi()
 
 const { data, pending, error } = await useAsyncData(
   'demo-validation',
-  () => $fetch(`${useRuntimeConfig().public.apiBase}/demos/${route.params.id}/confirm/${route.params.token}`, {
+  () => $fetch(`${useRuntimeConfig().public.apiBaseUrl}/demos/${route.params.id}/confirm/${route.params.token}`, {
     method: 'PATCH',
     headers
   }),

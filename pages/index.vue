@@ -285,5 +285,5 @@ const testimonials = computed(() =>
   }))
 );
 
-const tryAppUrl = `${useRuntimeConfig().public.appBase}/register/email`;
+const tryAppUrl = `${useRuntimeConfig().public.webappBaseUrl}/register/email`;
 </script>

@@ -199,7 +199,7 @@ const {
   "blog-post",
   () =>
     $fetch(
-      `${useRuntimeConfig().public.apiBase}/posts/slug/${route.params.slug}`,
+      `${useRuntimeConfig().public.apiBaseUrl}/posts/slug/${route.params.slug}`,
       {
         headers,
       }

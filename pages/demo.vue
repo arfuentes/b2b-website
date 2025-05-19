@@ -403,7 +403,7 @@ const submitForm = async () => {
       recaptchaToken
     }
 
-    const response = await $fetch(`${useRuntimeConfig().public.apiBase}/demos`, {
+    const response = await $fetch(`${useRuntimeConfig().public.apiBaseUrl}/demos`, {
       method: 'POST',
       body: payload,
       headers
@@ -435,7 +435,7 @@ onMounted(async () => {
   timeZone.value = Intl.DateTimeFormat().resolvedOptions().timeZone
 
   try {
-    const response = await $fetch<{ data: Country[] }>(`${useRuntimeConfig().public.apiBase}/demos/countries`, {
+    const response = await $fetch<{ data: Country[] }>(`${useRuntimeConfig().public.apiBaseUrl}/demos/countries`, {
       headers
     })
     countries.value = response.data

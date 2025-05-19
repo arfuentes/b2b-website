@@ -199,13 +199,25 @@
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Últimas ideas, consejos y actualizaciones",
+    "subtitle": "Ideas y novedades sobre contratación moderna, tecnología de RR. HH. y estrategias de reclutamiento.",
     "readMore": "Leer Más",
+    "search": "Buscar",
     "searchPlaceholder": "Buscar artículos...",
     "categories": "Categorías",
-    "relatedPosts": "Publicaciones Relacionadas",
-    "sharePost": "Compartir Esta Publicación",
-    "publishedOn": "Publicado el"
+    "relatedPosts": "Artículos relacionadas",
+    "sharePost": "Compartir este artículo",
+    "publishedOn": "Publicado el",
+    "error": "Error",
+    "errorMessage": "Ocurrió un error al cargar los artículos. Por favor, intenta de nuevo más tarde.",
+    "retry": "Reintentar",
+    "noResultMessage": "Ningún artículo coincide con tu búsqueda.",
+    "noResultTip": "Prueba con otras palabras clave o vuelve a la ",
+    "fullList": "lista completa",
+    "fromTo": "{from} - {to} de {total}"
+  },
+  "imageCta": {
+    "title": "Contrata de forma más inteligente y rápida",
+    "subtitle": "Tu solución todo en uno para un reclutamiento más eficiente"
   },
   "candidates": {
     "prepare": {

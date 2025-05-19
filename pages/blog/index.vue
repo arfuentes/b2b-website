@@ -24,7 +24,7 @@
               @click="handleSearch"
               class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span>Search</span>
+              <span>{{ $t("blog.search") }}</span>
             </button>
           </div>
         </div>
@@ -45,14 +45,14 @@
           class="rounded-md bg-red-100 p-4 border border-red-400 text-red-700"
         >
           <p>
-            <strong>Error:</strong> Something went wrong while loading the
-            posts. Please try again later.
+            <strong>{{ $t("blog.error") }}:</strong>
+            {{ $t("blog.errorMessage") }}
           </p>
           <button
             @click="refresh"
             class="mt-2 inline-flex items-center px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
           >
-            Retry
+            {{ $t("blog.retry") }}
           </button>
         </div>
       </div>
@@ -62,11 +62,12 @@
         v-else-if="posts && posts?.data.length === 0"
         class="text-center py-12"
       >
-        <p class="text-lg text-neutral-600">No blog posts match your search.</p>
+        <p class="text-lg text-neutral-600">{{ $t("blog.noResultMessage") }}</p>
         <p class="text-sm text-neutral-500 mt-2">
-          Try using different keywords or go back to the
-          <NuxtLink to="/blog" class="text-primary-500 hover:underline"
-            >full list</NuxtLink
+          {{ $t("blog.noResultTip") }}
+          <NuxtLinkLocale to="blog" class="text-primary-500 hover:underline">{{
+            $t("blog.fullList")
+          }}</NuxtLinkLocale
           >.
         </p>
       </div>
@@ -85,8 +86,13 @@
             @page-change="handlePageChange"
           />
           <p class="text-sm text-neutral-500">
-            {{ pagination.from }} - {{ pagination.to }} of
-            {{ pagination.total }}
+            {{
+              $t("blog.fromTo", {
+                from: pagination.from,
+                to: pagination.to,
+                total: pagination.total,
+              })
+            }}
           </p>
         </div>
       </div>
@@ -102,6 +108,10 @@ import {
   type PaginationData,
   type BlogResponse,
 } from "~/composables/useApi";
+
+const localePath = useLocalePath();
+
+const { locale } = useI18n();
 
 const route = useRoute();
 
@@ -146,7 +156,7 @@ const handlePageChange = async (page: number) => {
   }
   window.scrollTo({ top: 0 });
   await navigateTo({
-    path: "/blog",
+    path: localePath("/blog", locale.value),
     query: {
       search: searchQuery.value || undefined,
       page: page === 1 ? undefined : page,
@@ -160,7 +170,7 @@ const handleSearch = async () => {
   }
   window.scrollTo({ top: 0, behavior: "smooth" });
   await navigateTo({
-    path: "/blog",
+    path: localePath("/blog", locale.value),
     query: {
       search: searchQuery.value || undefined,
       page: undefined,

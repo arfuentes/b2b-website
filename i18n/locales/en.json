@@ -201,11 +201,23 @@
     "title": "Blog",
     "subtitle": "Insights and updates on modern hiring, HR tech, and recruitment strategies.",
     "readMore": "Read More",
+    "search": "Search",
     "searchPlaceholder": "Search articles...",
     "categories": "Categories",
     "relatedPosts": "Related Posts",
     "sharePost": "Share This Post",
-    "publishedOn": "Published on"
+    "publishedOn": "Published on",
+    "error": "Error",
+    "errorMessage": "Something went wrong while loading the posts. Please try again later.",
+    "retry": "Retry",
+    "noResultMessage": "No blog posts match your search.",
+    "noResultTip": "Try using different keywords or go back to the ",
+    "fullList": "full list",
+    "fromTo": "{from} - {to} of {total}"
+  },
+  "imageCta": {
+    "title": "Smarter, faster hiring starts here",
+    "subtitle": "Your All-in-One Solution for Streamlined Recruitment"
   },
   "candidates": {
     "prepare": {

@@ -3,10 +3,10 @@
     <div class="container mx-auto px-4 text-center">
       <div class="py-16 text-secondary-500">
         <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
-          Smarter, faster hiring starts here
+          {{ $t("imageCta.title") }}
         </h2>
         <p class="text-xl mb-8 max-w-3xl mx-auto">
-          Your All-in-One Solution for Streamlined Recruitment
+          {{ $t("imageCta.subtitle") }}
         </p>
         <div class="flex justify-center">
           <div>
@@ -26,7 +26,7 @@
       <div class="px-10 md:px-20">
         <img
           :src="`/images/cta/img_${index}.png`"
-          alt="Hiring"
+          :alt="$t('imageCta.title')"
           class="w-full"
         />
       </div>

@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-console.log('NUXT_API_BASE_URL =', process.env.NUXT_API_BASE_URL);
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
+  ssr: true,
   devtools: { enabled: true },
 
   modules: [
@@ -139,6 +139,7 @@ export default defineNuxtConfig({
 
   // For API integration
   runtimeConfig: {
+    apiBaseUrl: process.env.NUXT_API_BASE_URL || "https://api.zamdit.com/web",
     public: {
       webappBaseUrl: process.env.NUXT_WEBAPP_BASE_URL || "https://app.zamdit.com",
       apiBaseUrl: process.env.NUXT_API_BASE_URL || "https://api.zamdit.com/web",

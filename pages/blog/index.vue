@@ -1,163 +1,175 @@
 <template>
-  <div class="min-h-screen bg-neutral-50 py-16">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-heading font-bold mb-4">
-          {{ $t('blog.title') }}
-        </h1>
-        <p class="text-xl text-neutral-600">
-          {{ $t('blog.subtitle') }}
-        </p>
-      </div>
+  <div class="min-h-screen bg-white">
+    <div class="bg-alternate pt-16 pb-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-10">
+          <h1 class="text-4xl text-secondary-500 font-heading font-bold mb-4">
+            {{ $t("blog.title") }}
+          </h1>
+          <p class="text-xl text-secondary-500">
+            {{ $t("blog.subtitle") }}
+          </p>
+        </div>
 
-      <!-- Search Bar -->
-      <div class="max-w-2xl mx-auto mb-12">
-        <div class="flex gap-3">
-          <SearchInput
-            v-model="searchQuery"
-            :placeholder="$t('blog.searchPlaceholder')"
-            class="flex-1"
-          />
-          <button
-            @click="handleSearch"
-            :disabled="loading"
-            class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <span v-if="loading">{{ $t('common.loading') }}</span>
-            <span v-else>Search</span>
-          </button>
+        <!-- Search Bar -->
+        <div class="max-w-2xl mx-auto">
+          <div class="flex gap-3">
+            <UiSearchInput
+              v-model="searchQuery"
+              @clear="clearSearch"
+              :placeholder="$t('blog.searchPlaceholder')"
+              class="flex-1"
+            />
+            <button
+              @click="handleSearch"
+              class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <span>Search</span>
+            </button>
+          </div>
         </div>
       </div>
+    </div>
 
+    <div class="container mx-auto px-4 py-10">
       <!-- Loading State -->
-      <div v-if="pending" class="flex justify-center items-center py-12">
-        <div class="animate-spin rounded-full h-12 w-12 border-4 border-primary-500 border-t-transparent"></div>
+      <div v-if="pending" class="flex justify-center items-center py-40">
+        <div
+          class="animate-spin rounded-full h-24 w-24 border-8 border-primary-500 border-t-transparent"
+        ></div>
       </div>
 
       <!-- Error State -->
       <div v-else-if="error" class="text-center py-12">
-        <p class="text-error-600 text-lg mb-4">{{ error }}</p>
-        <button 
-          @click="refresh" 
-          class="bg-primary-500 text-white px-6 py-2 rounded-lg hover:bg-primary-600 transition-colors"
+        <div
+          class="rounded-md bg-red-100 p-4 border border-red-400 text-red-700"
         >
-          Try Again
-        </button>
+          <p>
+            <strong>Error:</strong> Something went wrong while loading the
+            posts. Please try again later.
+          </p>
+          <button
+            @click="refresh"
+            class="mt-2 inline-flex items-center px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+
+      <!-- NO results -->
+      <div
+        v-else-if="posts && posts?.data.length === 0"
+        class="text-center py-12"
+      >
+        <p class="text-lg text-neutral-600">No blog posts match your search.</p>
+        <p class="text-sm text-neutral-500 mt-2">
+          Try using different keywords or go back to the
+          <NuxtLink to="/blog" class="text-primary-500 hover:underline"
+            >full list</NuxtLink
+          >.
+        </p>
       </div>
 
       <!-- Posts Grid -->
-      <div 
-        v-else 
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        <ClientOnly>
-          <BlogCard 
-            v-for="post in posts?.data" 
-            :key="post.id" 
-            :post="post" 
-          />
-        </ClientOnly>
+      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <BlogCard v-for="post in posts?.data" :key="post.id" :post="post" />
       </div>
 
       <!-- Pagination -->
       <div v-if="pagination && pagination.lastPage > 1" class="mt-12">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-neutral-600">
-            Showing {{ pagination.from }} to {{ pagination.to }} of {{ pagination.total }} posts
-          </p>
-          <Pagination 
-            :current-page="pagination.currentPage" 
+        <div class="flex flex-col justify-center items-center gap-4">
+          <UiPagination
+            :current-page="pagination.currentPage"
             :total-pages="pagination.lastPage"
             @page-change="handlePageChange"
           />
+          <p class="text-sm text-neutral-500">
+            {{ pagination.from }} - {{ pagination.to }} of
+            {{ pagination.total }}
+          </p>
         </div>
       </div>
     </div>
+
+    <ImageCta />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import type { Ref } from 'vue'
-import { useAsyncData } from '#app'
-import { useApi } from '~/composables/useApi'
+import {
+  useApi,
+  type PaginationData,
+  type BlogResponse,
+} from "~/composables/useApi";
 
-interface Post {
-  id: number
-  title: string
-  slug: string
-  abstract: string
-  content: string
-  image: {
-    url: string
-  }
-  category: {
-    id: number
-    name: string
-    slug: string
-  }
-  author: {
-    id: number
-    name: string
-    image: {
-      url: string
-    }
-  }
-  publishedAt: string
-}
+const route = useRoute();
 
-interface PaginationData {
-  currentPage: number
-  perPage: number
-  from: number
-  to: number
-  total: number
-  lastPage: number
-}
+const queryParam = computed(() => route.query.search ?? "");
 
-interface BlogResponse {
-  data: Post[]
-  pagination: PaginationData
-}
+const currentPage = computed(() => parseInt(route.query.page as string) || 1);
 
-const searchQuery = ref('')
-const currentPage = ref(1)
-const loading = ref(false)
+const searchQuery = ref(queryParam.value);
 
-const { headers } = useApi()
+watch(queryParam, () => {
+  searchQuery.value = queryParam.value;
+});
 
-const { data: posts, pending, error, refresh } = await useAsyncData<BlogResponse>(
-  () => `blog-posts-${currentPage.value}-${searchQuery.value}`,
-  () => $fetch(`${useRuntimeConfig().public.apiBaseUrl}/posts`, {
-    params: {
-      page: currentPage.value,
-      size: 6,
-      query: searchQuery.value
-    },
-    headers
-  }),
-  {
-    server: false,
-    transform: (response) => response,
-    default: () => ({ data: [], pagination: null })
-  }
-)
+const { headers } = useApi();
 
-const pagination: Ref<PaginationData | null> = computed(() => posts.value?.pagination ?? null)
+const {
+  data: posts,
+  pending,
+  error,
+  refresh,
+} = await useAsyncData<BlogResponse>(
+  () => `blog-posts-${currentPage.value}-${queryParam.value}`,
+  () =>
+    $fetch(`${useRuntimeConfig().public.apiBaseUrl}/posts`, {
+      params: {
+        page: currentPage.value,
+        size: 6,
+        query: queryParam.value,
+      },
+      headers,
+    })
+);
+
+const pagination: Ref<PaginationData | null> = computed(
+  () => posts.value?.pagination ?? null
+);
 
 const handlePageChange = async (page: number) => {
-  currentPage.value = page
-  await refresh()
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
+  console.log({ event: "page changed", cp: currentPage.value, p: page });
+  if (page === currentPage.value) {
+    return;
+  }
+  window.scrollTo({ top: 0 });
+  await navigateTo({
+    path: "/blog",
+    query: {
+      search: searchQuery.value || undefined,
+      page: page === 1 ? undefined : page,
+    },
+  });
+};
 
 const handleSearch = async () => {
-  loading.value = true
-  try {
-    currentPage.value = 1
-    await refresh()
-  } finally {
-    loading.value = false
+  if (queryParam.value == searchQuery.value) {
+    return;
   }
-}
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  await navigateTo({
+    path: "/blog",
+    query: {
+      search: searchQuery.value || undefined,
+      page: undefined,
+    },
+  });
+};
+
+const clearSearch = async () => {
+  searchQuery.value = "";
+  await handleSearch();
+};
 </script>

@@ -1,17 +1,17 @@
 <template>
   <article
-    class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+    class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:-translate-y-1"
   >
     <div class="aspect-video overflow-hidden">
       <img
         :src="post.image.url"
         :alt="post.title"
-        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        class="w-full h-full object-cover"
       />
     </div>
     <div class="p-6">
       <h2
-        class="text-xl font-bold mb-3 line-clamp-2 hover:text-primary-600 transition-colors"
+        class="text-lg font-bold mb-3 line-clamp-2 hover:text-primary-600 transition-colors"
       >
         <NuxtLinkLocale
           :to="{ name: 'blog-slug', params: { slug: post.slug } }"
@@ -19,7 +19,7 @@
           {{ post.title }}
         </NuxtLinkLocale>
       </h2>
-      <p class="text-neutral-600 mb-4 line-clamp-3">{{ post.abstract }}</p>
+      <p class="text-neutral-600 mb-4 line-clamp-4">{{ post.abstract }}</p>
       <NuxtLinkLocale
         :to="{ name: 'blog-slug', params: { slug: post.slug } }"
         class="text-primary-500 font-medium inline-flex items-center hover:text-primary-600 transition-colors"
@@ -44,10 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import { useI18nRouting } from "#imports";
-
-const { localePath } = useI18nRouting();
-
 interface Props {
   post: {
     title: string;

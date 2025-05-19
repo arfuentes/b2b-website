@@ -179,7 +179,7 @@
   </header>
 
   <!-- Spacer to prevent content from being hidden under fixed header -->
-  <div class="h-[92px]"></div>
+  <div class="sm:h-[92px]"></div>
 </template>
 
 <script setup lang="ts">

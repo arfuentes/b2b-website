@@ -8,8 +8,8 @@
         <div class="flex flex-col lg:flex-row items-center">
           <div
             v-motion-slide-visible-once-left
-            :delay="200"
-            :duration="1500"
+            :delay="isMobile ? 0 : 200"
+            :duration="isMobile ? 1 : 1500"
             class="w-full lg:w-5/12"
             style="max-width: 600px"
           >
@@ -46,8 +46,8 @@
           <div class="w-100 lg:w-7/12">
             <img
               v-motion-slide-visible-once-right
-              :delay="200"
-              :duration="1500"
+              :delay="isMobile ? 0 : 200"
+              :duration="isMobile ? 1 : 1500"
               :src="`/images/home/${t('home.hero.image')}`"
               alt="Hero Image"
               class="p-2"
@@ -61,7 +61,7 @@
     <section class="py-10 bg-alternate">
       <div class="container mx-auto px-4">
         <h2
-          class="text-center text-2xl font-heading font-bold mb-10 text-secondary-600"
+          class="text-center text-2xl font-heading font-bold mb-10 text-secondary-500"
         >
           {{ $t("home.builtFor.title") }}
         </h2>
@@ -79,11 +79,11 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-20">
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2
-            class="text-3xl md:text-4xl font-heading font-bold mb-4 text-secondary-500"
+            class="text-3xl md:text-4xl font-heading font-bold text-secondary-500"
           >
             {{ $t("home.features.title") }}
           </h2>
@@ -98,7 +98,8 @@
         >
           <div
             v-motion-pop-visible-once
-            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-xl flex flex-col justify-start items-stretch transition duration-700"
+            :duration="isMobile ? 1 : 1000"
+            class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-xl flex flex-col justify-start items-stretch"
           >
             <div class="flex flex-grow pb-4">
               <h3 class="self-end text-2xl">{{ feature.title }}</h3>
@@ -111,7 +112,7 @@
           </div>
           <div
             v-motion-fade-visible-once
-            :duration="1500"
+            :duration="isMobile ? 1 : 1500"
             class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2 flex justify-center"
           >
             <img
@@ -125,10 +126,10 @@
     </section>
 
     <!-- Video Section -->
-    <section class="py-20 bg-neutral-900 text-white">
+    <section class="py-20 bg-neutral-900">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-white">
             {{ $t("home.video.title") }}
           </h2>
         </div>
@@ -155,7 +156,7 @@
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2
-            class="text-3xl md:text-4xl font-heading font-bold mb-4 text-secondary-500"
+            class="text-3xl md:text-4xl font-heading font-bold text-secondary-500"
           >
             {{ $t("home.testimonials.title") }}
           </h2>
@@ -166,14 +167,14 @@
             v-for="(testimonial, index) in testimonials"
             :key="index"
             v-motion-pop-visible-once
-            :duration="(index + 1) * 500"
+            :duration="isMobile ? 1 : (index + 1) * 500"
             :class="[
               'bg-white p-6 rounded-lg border-2 border-secondary-500 flex flex-col justify-between h-full',
               index > 2 ? 'hidden sm:flex md:flex lg:hidden' : '',
             ]"
           >
             <div class="mb-4">
-              <h3 class="font-heading font-bold mb-4 text-neutral-800">
+              <h3 class="font-heading font-bold mb-16 text-neutral-800">
                 {{ testimonial.title }}
               </h3>
               <p class="text-neutral-600 italic">"{{ testimonial.text }}"</p>
@@ -206,16 +207,15 @@
     <!-- Security Section -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
-        <h2
-          class="text-3xl md:text-4xl font-heading font-bold mb-4 text-neutral-800 text-center"
-        >
-          {{ $t("home.security.title") }}
-        </h2>
-        <p class="text-xl text-center text-neutral-600 mb-8">
-          {{ $t("home.security.subtitle") }}
-        </p>
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl md:text-4xl font-heading font-bold text-secondary-500"
+          >
+            {{ $t("home.security.title") }}
+          </h2>
+        </div>
         <div class="flex flex-col sm:flex-row">
-          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-3">
+          <div class="sm:w-1/2 md:w-5/12 lg:w-5/12 p-2">
             <img
               src="/images/home/enterprise-grade-security.png"
               alt="Security Image"
@@ -230,92 +230,30 @@
               "
             />
           </div>
-          <div class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 text-xl">
-            <p>
-              At Zamdit, we prioritize the security and privacy of your data.
-              Our platform is built on reliable, world-class cloud
-              infrastructure, ensuring your information is always protected and
-              accessible when you need it.
-            </p>
+          <div class="sm:w-1/2 md:w-7/12 lg:w-7/12 p-2 sm:pl-10 text-xl">
+            <p>{{ t("home.security.introduction") }}</p>
             <ul class="list-disc pl-6 py-2">
-              <li class="my-2">
-                <strong>Advanced Security Measures</strong>: Zamdit uses
-                industry-standard encryption and secure connections to keep your
-                data safe from unauthorised access.
-              </li>
-              <li class="my-2">
-                <strong>GDPR Compliance</strong>: We adhere to stringent data
-                protection regulations to safeguard candidate and organisational
-                information.
-              </li>
-              <li class="my-2">
-                <strong>Regular Monitoring and Audits</strong>: Our team
-                conducts continuous monitoring and security audits to maintain
-                the highest standards of safety and reliability.
+              <li class="my-2" v-for="i in 3" :key="i">
+                <strong>{{ $t(`home.security.point${i}Title`) }}</strong
+                >: {{ $t(`home.security.point${i}Text`) }}
               </li>
             </ul>
-            <p>
-              With Zamdit, you can focus on hiring the best talent while we take
-              care of protecting your data.
-            </p>
+            <p>{{ t("home.security.conclusion") }}</p>
           </div>
-        </div>
-        <div class="mt-8 text-center">
-          <NuxtLinkLocale
-            to="security"
-            class="inline-flex items-center text-primary-500 font-medium hover:text-primary-600 transition-colors"
-          >
-            {{ $t("common.learnMore") }}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-1"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </NuxtLinkLocale>
         </div>
       </div>
     </section>
-
-    <!-- CTA Section -->
-    <!-- <section class="py-16 bg-primary-700 text-white">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
-          Ready to transform your assessment process?
-        </h2>
-        <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-          Join thousands of companies that are making better hiring decisions
-          with our platform.
-        </p>
-        <div
-          class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
-        >
-          <NuxtLinkLocale
-            to="demo"
-            class="bg-white font-bold text-primary-700 hover:bg-neutral-100 py-3 px-8 rounded-md text-center transition-colors"
-          >
-            {{ $t("header.requestDemo") }}
-          </NuxtLinkLocale>
-          <NuxtLink
-            :to="tryAppUrl"
-            class="bg-secondary-500 text-white font-bold hover:bg-secondary-600 py-3 px-8 rounded-md text-center transition-colors"
-          >
-            {{ $t("header.tryFree") }}
-          </NuxtLink>
-        </div>
-      </div>
-    </section> -->
   </div>
 </template>
 
 <script setup lang="ts">
 const { t } = useI18n();
+
+const isMobile = ref(false);
+
+onBeforeMount(() => {
+  isMobile.value = window.innerWidth < 810;
+});
 
 const features = computed(() =>
   Array.from({ length: 4 }, (_, i) => i + 1).map((idx) => ({

@@ -99,11 +99,14 @@
     },
     "security": {
       "title": "Your data is safe with us",
-      "subtitle": "Enterprise-grade security",
-      "feature1": "SOC 2 Type II Compliant",
-      "feature2": "GDPR Ready",
-      "feature3": "End-to-end Encryption",
-      "feature4": "Regular Security Audits"
+      "introduction": "At Zamdit, we prioritize the security and privacy of your data. Our platform is built on reliable, world-class cloud infrastructure, ensuring your information is always protected and accessible when you need it.",
+      "point1Title": "Advanced Security Measures",
+      "point1Text": "Zamdit uses industry-standard encryption and secure connections to keep your data safe from unauthorized access.",
+      "point2Title": "GDPR Compliance",
+      "point2Text": "We adhere to stringent data protection regulations to safeguard candidate and organizational information.",
+      "point3Title": "Regular Monitoring and Audits",
+      "point3Text": "Our team conducts continuous monitoring and security audits to maintain the highest standards of safety and reliability.",
+      "conclusion": "With Zamdit, you can focus on hiring the best talent while we take care of protecting your data."
     }
   },
   "requestDemo": {

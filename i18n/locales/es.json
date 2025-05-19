@@ -65,34 +65,34 @@
     "testimonials": {
       "title": "Lo que dicen nuestros clientes",
       "card1": {
-        "title": "A Game-Changer for Our Hiring Process",
-        "text": "We reduced our time-to-hire by 50% after switching to Zamdit. The platform's intuitive interface and automation features have made our recruitment process more efficient than ever. I can’t imagine going back to our old methods.",
+        "title": "Un antes y un después en nuestro proceso de contratación",
+        "text": "Reducimos nuestro tiempo de contratación en un 50% después de cambiar a Zamdit. La interfaz intuitiva y las funciones de automatización han hecho nuestro proceso de reclutamiento más eficiente que nunca. No me imagino volver a nuestros métodos anteriores.",
         "name": "Sophie Richards",
-        "position": "HR Director",
+        "position": "Directora de RR. HH.",
         "company": "Vertex Inc.",
         "logo": "vertex.png"
       },
       "card2": {
-        "title": "Efficient and Reliable",
-        "text": "Using Zamdit has streamlined every step of our hiring process. From automated reminders to detailed candidate evaluation tools, everything works seamlessly. It’s refreshing to see a tool that truly understands what recruiters need.",
+        "title": "Eficiente y confiable",
+        "text": "Zamdit ha optimizado cada etapa de nuestro proceso de selección. Desde recordatorios automáticos hasta herramientas detalladas de evaluación de candidatos, todo funciona de forma fluida. Es un alivio ver una herramienta que realmente entiende lo que los reclutadores necesitamos.",
         "name": "Lisa Thompson",
-        "position": "Talent Acquisition Manager",
+        "position": "Responsable de Atracción de Talento",
         "company": "BrightPath Tech",
         "logo": "brightpath.png"
       },
       "card3": {
-        "title": "Simplifies Team Collaboration",
-        "text": "Zamdit has made it so much easier for our hiring team to work together. The ability to share notes, scorecards, and candidate updates in real-time has eliminated confusion and saved us a lot of back-and-forth emails. It’s truly a collaborative tool that keeps everyone on the same page.",
+        "title": "Facilita la colaboración del equipo",
+        "text": "Zamdit ha hecho que sea mucho más sencillo para nuestro equipo de selección trabajar en conjunto. La posibilidad de compartir notas, evaluaciones y actualizaciones de candidatos en tiempo real ha eliminado la confusión y nos ha ahorrado muchos correos innecesarios. Es realmente una herramienta colaborativa que mantiene a todos alineados.",
         "name": "Michael Rivera",
-        "position": "Recruitment Specialist",
+        "position": "Especialista en Reclutamiento",
         "company": "Greenfield Solutions",
         "logo": "greenfield.png"
       },
       "card4": {
-        "title": "Customizable and User-Friendly",
-        "text": "I love how flexible Zamdit is! The no-code career portal builder allowed us to create a branded, professional portal in no time. It’s so user-friendly that even my less tech-savvy colleagues find it easy to navigate and use.",
+        "title": "Personalizable y fácil de usar",
+        "text": "¡Me encanta lo flexible que es Zamdit! El generador de portales de empleo sin código nos permitió crear un portal profesional con nuestra marca en muy poco tiempo. Es tan fácil de usar que incluso mis colegas menos expertos en tecnología lo manejan sin problemas.",
         "name": "Daniel Nguyen",
-        "position": "Hiring Manager",
+        "position": "Responsable de Selección",
         "company": "Summit Corp",
         "logo": "summit.png"
       }

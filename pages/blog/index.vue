@@ -111,8 +111,6 @@ import {
 
 const localePath = useLocalePath();
 
-const { locale } = useI18n();
-
 const route = useRoute();
 
 const queryParam = computed(() => route.query.search ?? "");
@@ -150,13 +148,12 @@ const pagination: Ref<PaginationData | null> = computed(
 );
 
 const handlePageChange = async (page: number) => {
-  console.log({ event: "page changed", cp: currentPage.value, p: page });
   if (page === currentPage.value) {
     return;
   }
   window.scrollTo({ top: 0 });
   await navigateTo({
-    path: localePath("/blog", locale.value),
+    path: localePath("/blog"),
     query: {
       search: searchQuery.value || undefined,
       page: page === 1 ? undefined : page,
@@ -170,7 +167,7 @@ const handleSearch = async () => {
   }
   window.scrollTo({ top: 0, behavior: "smooth" });
   await navigateTo({
-    path: localePath("/blog", locale.value),
+    path: localePath("/blog"),
     query: {
       search: searchQuery.value || undefined,
       page: undefined,

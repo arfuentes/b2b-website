@@ -231,30 +231,20 @@ const switchLanguage = async (lang: "en" | "es") => {
   router.push(localePath("/", lang));
 };
 
-let lastScrollPosition = 0;
-
 const isShrunk = ref(false);
 
-// Handle scroll for hiding top bar
 const handleScroll = () => {
   const currentScrollPosition = window.scrollY;
-  //if (currentScrollPosition < lastScrollPosition || currentScrollPosition < 50) {
   if (currentScrollPosition < 28) {
-    // Scrolling up or near top - show the bar
     if (topBar.value) {
-      // topBar.value.style.transform = 'translateY(0)';
       topBar.value.classList.remove("hidden", "pointer-events-none");
     }
   } else {
-    // Scrolling down - hide the bar
     if (topBar.value) {
       topBar.value.classList.add("hidden", "pointer-events-none");
-      // topBar.value.style.transform = 'translateY(-100%)';
     }
   }
   isShrunk.value = window.scrollY >= 28;
-
-  lastScrollPosition = currentScrollPosition;
 };
 
 // Close language menu when clicking outside

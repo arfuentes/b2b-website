@@ -5,13 +5,18 @@
       :for="id"
       class="block mb-2 text-sm font-medium"
       :class="labelClass"
-      >{{ label }}</label
     >
+      {{ label }}
+      <span v-if="!required" class="text-sm" :class="helperTextClass">
+        (optional)
+      </span>
+    </label>
     <input
       :id="id"
+      v-bind="$attrs"
       :type="type"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="emit('update:modelValue', $event.target.value)"
       :placeholder="placeholder"
       :required="required"
       :disabled="disabled"
@@ -32,56 +37,29 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+interface Props {
+  id?: string;
+  modelValue?: string;
+  label?: string;
+  type?: string;
+  placeholder?: string;
+  required?: boolean;
+  disabled?: boolean;
+  error?: string;
+  helperText?: string;
+  maxlength?: string | number;
+  darkMode?: boolean;
+}
 
-const props = defineProps({
-  id: {
-    type: String,
-    default: () => `input-${Math.random().toString(36).substring(2, 9)}`,
-  },
-  modelValue: {
-    type: [String, Number],
-    default: "",
-  },
-  label: {
-    type: String,
-    default: "",
-  },
-  type: {
-    type: String,
-    default: "text",
-  },
-  placeholder: {
-    type: String,
-    default: "",
-  },
-  required: {
-    type: Boolean,
-    default: false,
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  error: {
-    type: String,
-    default: "",
-  },
-  helperText: {
-    type: String,
-    default: "",
-  },
-  maxlength: {
-    type: [String, Number],
-    default: undefined,
-  },
-  darkMode: {
-    type: Boolean,
-    default: false,
-  },
+const props = withDefaults(defineProps<Props>(), {
+  id: () => `input-${Math.random().toString(36).substring(2, 9)}`,
+  type: "text",
+  required: false,
+  disabled: false,
+  darkMode: false,
 });
 
-defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
 
 const labelClass = computed(() =>
   props.darkMode ? "text-white" : "text-neutral-700"

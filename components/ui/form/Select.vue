@@ -11,16 +11,13 @@
         (optional)
       </span>
     </label>
-    <textarea
+    <select
       :id="id"
       v-bind="$attrs"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-      :placeholder="placeholder"
+      @change="$emit('update:modelValue', $event.target.value)"
       :required="required"
       :disabled="disabled"
-      :rows="rows"
-      :maxlength="maxlength"
       :class="[
         'w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 transition-colors',
         error
@@ -28,7 +25,16 @@
           : 'border-neutral-300 focus:ring-primary-500 focus:border-primary-500',
         disabled ? 'bg-neutral-100 cursor-not-allowed' : 'bg-white',
       ]"
-    ></textarea>
+    >
+      <option v-if="placeholder" value="">{{ placeholder }}</option>
+      <option
+        v-for="option in options"
+        :value="option.value"
+        :key="option.value"
+      >
+        {{ option.label }}
+      </option>
+    </select>
     <p v-if="error" class="mt-1 text-sm text-error-500">{{ error }}</p>
     <p v-else-if="helperText" class="mt-1 text-sm" :class="helperTextClass">
       {{ helperText }}
@@ -41,30 +47,39 @@ interface Props {
   id?: string;
   modelValue?: string;
   label?: string;
-  rows?: number;
   placeholder?: string;
   required?: boolean;
   disabled?: boolean;
   error?: string;
   helperText?: string;
-  maxlength?: string | number;
   darkMode?: boolean;
+  options: { value: string | number; label: string }[];
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  id: () => `textarea-${Math.random().toString(36).substring(2, 9)}`,
-  rows: 4,
+  id: () => `select-${Math.random().toString(36).substring(2, 9)}`,
+  modelValue: "",
   required: false,
   disabled: false,
   darkMode: false,
 });
 
-defineEmits(["update:modelValue"]);
-
 const labelClass = computed(() =>
   props.darkMode ? "text-white" : "text-neutral-700"
 );
+
 const helperTextClass = computed(() =>
   props.darkMode ? "text-neutral-300" : "text-neutral-500"
 );
 </script>
+
+<style>
+select:not([size]) {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 10 6'%3e %3cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4'/%3e %3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 0.75em 0.75em;
+  padding-right: 2.5rem;
+}
+</style>

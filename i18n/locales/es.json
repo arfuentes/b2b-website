@@ -110,42 +110,78 @@
       "conclusion": "Con Zamdit, puedes enfocarte en contratar al mejor talento mientras nosotros nos encargamos de proteger tu información."
     }
   },
-  "requestDemo": {
-    "title": "Solicita una Demo Personalizada",
-    "subtitle": "Completa el formulario y te contactaremos para programar una demo",
+  "demo": {
+    "title": "Solicita una Demostración Personalizada de Zamdit",
+    "subtitle": "Descubre cómo Zamdit puede optimizar tu proceso de contratación. Solicita una demostración en vivo y nuestro equipo te mostrará las funciones clave, responderá tus preguntas y te enseñará cómo contratar de forma más inteligente y rápida.",
+    "whatToExpect": "¿Qué puedes esperar?",
+    "point1": "Asesoría Personalizada – Comenzaremos con una breve conversación para entender tus necesidades de contratación y cómo Zamdit puede ayudarte.",
+    "point2": "Recorrido en Vivo del Producto – Explora en directo las funciones de Zamdit y cómo facilitan y agilizan el proceso de selección.",
+    "point3": "Casos de Uso Reales – Descubre cómo empresas como la tuya sacan provecho de Zamdit y cómo se puede integrar a tu flujo de trabajo.",
+    "point4": "Recomendaciones a Medida – Analizaremos el mejor plan para tu negocio, según tus metas y necesidades.",
+    "point5": "Sin Compromisos – Es una demostración gratuita y sin obligación alguna, para ayudarte a tomar una decisión informada.",
+    "image": "request-demo.png",
+    "formTitle": "Por favor, completa tu información",
     "form": {
-      "firstName": "Nombre",
-      "lastName": "Apellido",
-      "email": "Correo Electrónico Empresarial",
-      "company": "Nombre de la Empresa",
-      "jobTitle": "Puesto de Trabajo",
-      "phoneNumber": "Número de Teléfono",
-      "companySize": "Tamaño de la Empresa",
-      "interests": "¿Qué te interesa?",
-      "message": "Información Adicional",
-      "submit": "Solicitar Demo",
-      "required": "Obligatorio",
+      "fullName": "Nombre completo",
+      "email": "Correo electrónico corporativo",
+      "phone": "Número de teléfono",
+      "company": "Nombre de la empresa",
+      "countryId": "País",
+      "companySize": "Tamaño de la empresa",
+      "preferredWeekdays": "Días preferidos",
+      "preferredTime": "Horario preferido",
+      "comments": "Comentarios adicionales",
+      "submit": "Solicitar demostración",
+      "submitting": "Procesando...",
+      "placeholders": {
+        "countryId": "Selecciona un país",
+        "companySize": "Selecciona el tamaño de la empresa",
+        "preferredWeekdays": "Selecciona los días preferidos",
+        "preferredTime": "Selecciona el horario preferido"
+      },
+      "weekdays": {
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes"
+      },
       "validation": {
-        "required": "Este campo es obligatorio",
-        "email": "Por favor, introduce un correo electrónico válido",
-        "phone": "Por favor, introduce un número de teléfono válido"
+        "error": "¡Error! ",
+        "fullNameRequired": "El nombre completo es obligatorio",
+        "fullNameTooLong": "El nombre completo no debe exceder los 255 caracteres",
+        "emailRequired": "El correo electrónico corporativo es obligatorio",
+        "emailNotValid": "Ingresa una dirección de correo válida",
+        "emailTooLong": "El correo electrónico no debe exceder los 255 caracteres",
+        "phoneNotValid": "Ingresa un número de teléfono válido",
+        "phoneTooLong": "El número de teléfono no debe exceder los 20 caracteres",
+        "companyRequired": "El nombre de la empresa es obligatorio",
+        "companyTooLong": "El nombre de la empresa no debe exceder los 255 caracteres",
+        "countryIdRequired": "El país es obligatorio",
+        "companySizeRequired": "El tamaño de la empresa es obligatorio",
+        "commentsTooLong": "Los comentarios no deben exceder los 65,000 caracteres",
+        "reCaptchaFailed": "Falló la verificación de reCAPTCHA. Intenta de nuevo.",
+        "noBusinessEmail": "Utiliza una dirección de correo electrónico corporativa válida",
+        "alreadySubmitted": "Ya has enviado una solicitud de demostración",
+        "genericError": "Ocurrió un error. Inténtalo de nuevo más tarde."
       }
     },
     "success": {
-      "title": "¡Gracias!",
-      "message": "Hemos recibido tu solicitud de demo. Revisa tu correo electrónico para obtener un enlace de verificación."
+      "title": "¡Gracias por Solicitar una Demostración!",
+      "paragraph1": "Hemos recibido tu solicitud. Para continuar, primero recibirás un correo electrónico para confirmar tu solicitud. Revisa tu bandeja de entrada y confirma tu correo para seguir con el proceso.",
+      "paragraph2": "Una vez confirmado, nuestro equipo se pondrá en contacto contigo para agendar tu demostración personalizada. Si necesitamos más detalles para adaptar la sesión a tus necesidades, te contactaremos antes de programarla.",
+      "paragraph3": "Durante la sesión, te mostraremos las funciones clave de Zamdit, responderemos tus dudas y te explicaremos cómo nuestra plataforma puede optimizar tu proceso de contratación.",
+      "paragraph4": "Si tienes alguna consulta urgente o quieres que enfoquemos la demo en algo específico, escríbenos a support{'@'}zamdit.com.",
+      "paragraph5": "¡Esperamos hablar contigo muy pronto!",
+      "image": "demo-received.jpg"
     },
-    "validation": {
-      "title": "Verificación de Solicitud de Demo",
-      "loading": "Validando tu solicitud...",
-      "success": {
-        "title": "¡Éxito!",
-        "message": "Tu solicitud de demo ha sido verificada. Nuestro equipo te contactará en breve para programar tu demo."
-      },
-      "error": {
-        "title": "Verificación Fallida",
-        "message": "El enlace de verificación es inválido o ha expirado. Por favor, envía una nueva solicitud de demo."
-      }
+    "confirmation": {
+      "title": "¡Tu Correo Electrónico Ha Sido Confirmado!",
+      "paragraph1": "Gracias por confirmar tu correo electrónico. Tu solicitud de demostración está siendo procesada.",
+      "paragraph2": "Nuestro equipo revisará tu solicitud y pronto se pondrá en contacto contigo para agendar tu demostración personalizada. Si necesitamos más información antes de programarla, nos comunicaremos contigo primero.",
+      "paragraph3": "Mientras tanto, si tienes alguna duda urgente, puedes escribirnos a support{'@'}zamdit.com.",
+      "paragraph4": "¡Estamos deseando hablar contigo!",
+      "image": "demo-confirmed.jpg"
     }
   },
   "pricing": {
@@ -248,6 +284,8 @@
     "next": "Siguiente",
     "previous": "Anterior",
     "loading": "Cargando...",
-    "error": "Ocurrió un error. Por favor, inténtalo de nuevo."
+    "error": "Ocurrió un error. Por favor, inténtalo de nuevo.",
+    "optional": "(opcional)",
+    "close": "Cerrar"
   }
 }

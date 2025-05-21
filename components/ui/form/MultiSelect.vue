@@ -7,7 +7,7 @@
     >
       {{ label }}
       <span v-if="!required" class="text-sm" :class="helperTextClass">
-        (optional)
+        {{ $t("common.optional") }}
       </span>
     </label>
     <div

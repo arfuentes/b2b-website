@@ -110,42 +110,78 @@
       "conclusion": "With Zamdit, you can focus on hiring the best talent while we take care of protecting your data."
     }
   },
-  "requestDemo": {
-    "title": "Request a Personalized Demo",
-    "subtitle": "Fill out the form below and we'll reach out to schedule a demo",
+  "demo": {
+    "title": "Request a Personalized Demo of Zamdit",
+    "subtitle": "Experience how Zamdit can streamline your hiring process. Request a live demo, and our team will walk you through the key features, answer your questions, and show you how Zamdit can help you hire smarter and faster.",
+    "whatToExpect": "What to expect?",
+    "point1": "Personalized Consultation – We'll start with a quick discussion to understand your hiring needs and how Zamdit can support your company.",
+    "point2": "Live Product Walkthrough – Get a hands-on look at Zamdit's features and see how they simplify and speed up hiring.",
+    "point3": "Use Case Insights – Discover how companies like yours benefit from Zamdit and how it can fit into your workflow.",
+    "point4": "Tailored Recommendations – Explore the best plan for your business based on your goals and requirements.",
+    "point5": "No Obligation – This is a free, no-commitment demo to help you make an informed decision.",
+    "image": "request-demo.png",
+    "formTitle": "Please enter your information",
     "form": {
-      "firstName": "First Name",
-      "lastName": "Last Name",
+      "fullName": "Full Name",
       "email": "Business Email",
+      "phone": "Phone Number",
       "company": "Company Name",
-      "jobTitle": "Job Title",
-      "phoneNumber": "Phone Number",
+      "countryId": "Country",
       "companySize": "Company Size",
-      "interests": "What are you interested in?",
-      "message": "Additional Information",
+      "preferredWeekdays": "Preferred Weekdays",
+      "preferredTime": "Preferred Time",
+      "comments": "Additional Comments",
       "submit": "Request Demo",
-      "required": "Required",
+      "submitting": "Processing...",
+      "placeholders": {
+        "countryId": "Select a country",
+        "companySize": "Select company Size",
+        "preferredWeekdays": "Select preferred weekdays",
+        "preferredTime": "Select your preferred time"
+      },
+      "weekdays": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday"
+      },
       "validation": {
-        "required": "This field is required",
-        "email": "Please enter a valid email address",
-        "phone": "Please enter a valid phone number"
+        "error": "Error! ",
+        "fullNameRequired": "Full name is required",
+        "fullNameTooLong": "Full name must not exceed 255 characters",
+        "emailRequired": "Business email is required",
+        "emailNotValid": "Please enter a valid email address",
+        "emailTooLong": "Email must not exceed 255 characters",
+        "phoneNotValid": "Please enter a valid phone number",
+        "phoneTooLong": "Phone number must not exceed 20 characters",
+        "companyRequired": "Company name is required",
+        "companyTooLong": "Company name must not exceed 255 characters",
+        "countryIdRequired": "Country is required",
+        "companySizeRequired": "Company size is required",
+        "commentsTooLong": "Comments must not exceed 65000 characters",
+        "reCaptchaFailed": "reCAPTCHA verification failed. Please try again.",
+        "noBusinessEmail": "Please use a valid business email address",
+        "alreadySubmitted": "You have already submitted a demo request",
+        "genericError": "An error occurred. Please try again later."
       }
     },
     "success": {
-      "title": "Thank You!",
-      "message": "We've received your demo request. Check your email for a verification link to confirm your request."
+      "title": "Thank You for Requesting a Demo!",
+      "paragraph1": "We've received your request, and to proceed, you'll first receive an email to confirm your request. Please check your inbox and confirm your email to continue the process.",
+      "paragraph2": "Once confirmed, our team will reach out to schedule your personalized demo. If we need any additional details to tailor the session to your needs, we'll contact you first before setting up the demo.",
+      "paragraph3": "In the session, we'll walk you through Zamdit's key features, answer any questions, and show you how our platform can streamline your hiring process.",
+      "paragraph4": "If you have any urgent questions or specific areas you'd like us to focus on, feel free to reach out at support{'@'}zamdit.com.",
+      "paragraph5": "We look forward to speaking with you soon!",
+      "image": "demo-received.jpg"
     },
-    "validation": {
-      "title": "Demo Request Verification",
-      "loading": "Validating your request...",
-      "success": {
-        "title": "Success!",
-        "message": "Your demo request has been verified. Our team will contact you shortly to schedule your demo."
-      },
-      "error": {
-        "title": "Verification Failed",
-        "message": "The verification link is invalid or has expired. Please submit a new demo request."
-      }
+    "confirmation": {
+      "title": "Your Email Has Been Confirmed!",
+      "paragraph1": "Thank you for confirming your email. Your demo request is now being processed.",
+      "paragraph2": "Our team will review your request and reach out soon to schedule your personalized demo. If we need any additional details before setting up the session, we’ll contact you first.",
+      "paragraph3": "In the meantime, if you have any urgent questions, feel free to reach us at suport{'@'}zamdit.com.",
+      "paragraph4": "We look forward to speaking with you!",
+      "image": "demo-confirmed.jpg"
     }
   },
   "pricing": {
@@ -248,6 +284,8 @@
     "next": "Next",
     "previous": "Previous",
     "loading": "Loading...",
-    "error": "An error occurred. Please try again."
+    "error": "An error occurred. Please try again.",
+    "optional": "optional",
+    "close": "Close"
   }
 }

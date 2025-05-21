@@ -8,7 +8,7 @@
     >
       {{ label }}
       <span v-if="!required" class="text-sm" :class="helperTextClass">
-        (optional)
+        {{ $t("common.optional") }}
       </span>
     </label>
     <select
@@ -19,7 +19,7 @@
       :required="required"
       :disabled="disabled"
       :class="[
-        'w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 transition-colors',
+        'w-full px-4 py-2 border rounded-md cursor-pointer focus:outline-none focus:ring-2 transition-colors',
         error
           ? 'border-error-500 focus:ring-error-500 focus:border-error-500'
           : 'border-neutral-300 focus:ring-primary-500 focus:border-primary-500',

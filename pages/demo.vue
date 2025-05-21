@@ -1,156 +1,72 @@
 <template>
-  <div class="min-h-screen bg-neutral-50 py-16">
-    <div class="container mx-auto px-4">
-      <!-- Success message after form submission -->
-      <div v-if="formSubmitted" class="max-w-3xl mx-auto">
-        <div class="text-center mb-8">
-          <div
-            class="w-20 h-20 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-6"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10 text-success-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <h2 class="text-3xl font-heading font-bold mb-6">
-            Thank You for Requesting a Demo!
-          </h2>
-          <div class="prose prose-lg mx-auto">
-            <p>
-              We've received your request, and to proceed, you'll first receive
-              an email to confirm your request. Please check your inbox and
-              confirm your email to continue the process.
-            </p>
-            <p>
-              Once confirmed, our team will reach out to schedule your
-              personalized demo. If we need any additional details to tailor the
-              session to your needs, we'll contact you first before setting up
-              the demo.
-            </p>
-            <p>
-              In the session, we'll walk you through Zamdit's key features,
-              answer any questions, and show you how our platform can streamline
-              your hiring process.
-            </p>
-            <p>
-              If you have any urgent questions or specific areas you'd like us
-              to focus on, feel free to reach out at support@zamdit.com.
-            </p>
-            <p>We look forward to speaking with you soon!</p>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <img
-            src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg"
-            alt="Calendar on laptop"
-            class="rounded-lg shadow-lg max-w-md w-full"
-          />
-        </div>
-      </div>
-
-      <div v-else>
-        <!-- Error Alert -->
-        <div v-if="submitError" class="max-w-3xl mx-auto mb-8">
-          <div
-            class="bg-error-100 border border-error-200 text-error-700 px-4 py-3 rounded-lg relative"
-            role="alert"
-          >
-            <strong class="font-bold">Error!</strong>
-            <span class="block sm:inline"> {{ submitError }}</span>
-            <button
-              @click="submitError = ''"
-              class="absolute top-0 bottom-0 right-0 px-4 py-3"
-            >
-              <span class="sr-only">Close</span>
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Form Content -->
-        <div class="text-center mb-12">
-          <h1 class="text-4xl font-heading font-bold mb-4">
-            Request a Personalized Demo of Zamdit
+  <div class="min-h-screen bg-white">
+    <div class="bg-alternate py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <h1 class="text-4xl font-heading font-bold mb-4 text-secondary-500">
+            {{ $t("demo.title") }}
           </h1>
-          <p class="text-xl text-neutral-600">
-            Experience how Zamdit can streamline your hiring process. Request a
-            live demo, and our team will walk you through the key features,
-            answer your questions, and show you how Zamdit can help you hire
-            smarter and faster.
+          <p class="text-xl text-secondary-500 md:max-w-4xl mx-auto">
+            {{ $t("demo.subtitle") }}
           </p>
         </div>
+      </div>
+    </div>
 
+    <!-- Success message after form submission -->
+    <div v-if="formSubmitted">
+      <div class="container md:max-w-3xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-heading font-bold mb-6 text-success-600">
+          {{ $t("demo.success.title") }}
+        </h2>
+        <p v-for="i in 5" :key="i" class="pb-6 text-lg">
+          {{ $t(`demo.success.paragraph${i}`) }}
+        </p>
+        <img
+          :src="`/images/demo/${$t('demo.success.image')}`"
+          :alt="$t('demo.success.title')"
+          class="rounded-md w-full"
+        />
+      </div>
+    </div>
+
+    <!-- Form Content -->
+    <div v-else>
+      <div class="container mx-auto px-4 py-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <!-- Left Column -->
           <div>
             <h2 class="text-2xl font-heading font-bold mb-6">
-              What to expect?
+              {{ $t("demo.whatToExpect") }}
             </h2>
-            <div class="space-y-4 mb-8">
-              <p class="flex items-start">
-                <span class="text-success-500 mr-2">✔</span>
-                <span
-                  >Personalized Consultation – We'll start with a quick
-                  discussion to understand your hiring needs and how Zamdit can
-                  support your company.</span
-                >
-              </p>
-              <p class="flex items-start">
-                <span class="text-success-500 mr-2">✔</span>
-                <span
-                  >Live Product Walkthrough – Get a hands-on look at Zamdit's
-                  features and see how they simplify and speed up hiring.</span
-                >
-              </p>
-              <p class="flex items-start">
-                <span class="text-success-500 mr-2">✔</span>
-                <span
-                  >Use Case Insights – Discover how companies like yours benefit
-                  from Zamdit and how it can fit into your workflow.</span
-                >
-              </p>
-              <p class="flex items-start">
-                <span class="text-success-500 mr-2">✔</span>
-                <span
-                  >Tailored Recommendations – Explore the best plan for your
-                  business based on your goals and requirements.</span
-                >
-              </p>
-              <p class="flex items-start">
-                <span class="text-success-500 mr-2">✔</span>
-                <span
-                  >No Obligation – This is a free, no-commitment demo to help
-                  you make an informed decision.</span
-                >
+            <div class="space-y-4 mb-8 text-lg">
+              <p
+                v-for="(point, index) in points"
+                :key="index"
+                class="flex items-start pb-6"
+              >
+                <span class="text-primary-500 mr-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="size-10"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span>{{ point }}</span>
               </p>
             </div>
 
             <img
-              src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg"
-              alt="Product Demo"
-              class="rounded-lg shadow-lg w-full"
+              :src="`/images/demo/${$t('demo.image')}`"
+              :alt="$t('demo.title')"
+              class="rounded-md w-full"
             />
           </div>
 
@@ -158,14 +74,14 @@
           <ClientOnly>
             <div class="bg-secondary-500 rounded-lg p-8">
               <h2 class="text-2xl font-heading font-bold mb-6 text-white">
-                Please enter your information
+                {{ $t("demo.formTitle") }}
               </h2>
 
               <form @submit.prevent="submitForm" class="space-y-6">
                 <UiFormInput
                   id="full-name"
                   v-model="form.fullName"
-                  label="Full Name"
+                  :label="$t('demo.form.fullName')"
                   :error="errors.fullName"
                   required
                   maxlength="255"
@@ -175,7 +91,7 @@
                 <UiFormInput
                   id="business-email"
                   v-model="form.email"
-                  label="Business Email"
+                  :label="$t('demo.form.email')"
                   type="email"
                   :error="errors.email"
                   required
@@ -186,7 +102,7 @@
                 <UiFormInput
                   id="phone-number"
                   v-model="form.phone"
-                  label="Phone Number"
+                  :label="$t('demo.form.phone')"
                   :error="errors.phone"
                   maxlength="20"
                   dark-mode
@@ -195,7 +111,7 @@
                 <UiFormInput
                   id="company-name"
                   v-model="form.company"
-                  label="Company Name"
+                  :label="$t('demo.form.company')"
                   :error="errors.company"
                   required
                   maxlength="255"
@@ -206,8 +122,8 @@
                   v-if="!countriesLoading"
                   id="country-id"
                   v-model="form.countryId"
-                  label="Country"
-                  placeholder="Select a country"
+                  :label="$t('demo.form.countryId')"
+                  :placeholder="$t('demo.form.placeholders.countryId')"
                   :error="errors.countryId"
                   required
                   dark-mode
@@ -217,8 +133,8 @@
                 <UiFormSelect
                   id="company-size"
                   v-model="form.companySize"
-                  label="Company Size"
-                  placeholder="Select company size"
+                  :label="$t('demo.form.companySize')"
+                  :placeholder="$t('demo.form.placeholders.companySize')"
                   :error="errors.companySize"
                   required
                   dark-mode
@@ -229,16 +145,16 @@
                   id="preferred-weekdays"
                   v-model="form.preferredWeekdays"
                   :options="weekdayOptions"
-                  label="Preferred Weekdays"
-                  placeholder="Select preferred weekdays"
+                  :label="$t('demo.form.preferredWeekdays')"
+                  :placeholder="$t('demo.form.placeholders.preferredWeekdays')"
                   dark-mode
                 />
 
                 <UiFormSelect
                   id="preferred-time"
                   v-model="form.preferredTime"
-                  label="Preferred Time"
-                  placeholder="Select your preferred time"
+                  :label="$t('demo.form.preferredTime')"
+                  :placeholder="$t('demo.form.placeholders.preferredTime')"
                   dark-mode
                   :options="times"
                 />
@@ -246,19 +162,43 @@
                 <UiFormTextarea
                   id="additional-comments"
                   v-model="form.comments"
-                  label="Additional Comments"
+                  :label="$t('demo.form.comments')"
                   :error="errors.comments"
                   maxlength="65000"
                   :rows="4"
                   dark-mode
                 />
 
-                <!-- Error Messages -->
+                <!-- Error Message -->
                 <div
+                  class="bg-error-100 border border-error-200 text-error-700 px-4 py-3 rounded-md relative"
+                  role="alert"
                   v-if="submitError"
-                  class="bg-error-100 text-error-700 p-4 rounded-md"
                 >
-                  {{ submitError }}
+                  <strong class="font-bold">{{
+                    $t("demo.form.validation.error")
+                  }}</strong>
+                  <span class="block sm:inline">{{ submitError }}</span>
+                  <button
+                    type="button"
+                    @click="submitError = ''"
+                    class="absolute top-0 bottom-0 right-0 px-4 py-3 opacity-70 hover:opacity-100"
+                  >
+                    <span class="sr-only">{{ $t("common.close") }}</span>
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
                 </div>
 
                 <div class="flex justify-center">
@@ -267,8 +207,10 @@
                     :disabled="isSubmitting"
                     class="bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 px-8 rounded-lg transition-colors w-full disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span v-if="isSubmitting"> Processing... </span>
-                    <span v-else> Request Demo </span>
+                    <span v-if="isSubmitting">
+                      {{ $t("demo.form.submitting") }}
+                    </span>
+                    <span v-else> {{ $t("demo.form.submit") }} </span>
                   </button>
                 </div>
               </form>
@@ -281,8 +223,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, onMounted, useHead } from "#imports";
 import { useApi } from "~/composables/useApi";
+
+const { t } = useI18n();
 
 interface Country {
   id: string;
@@ -327,11 +270,19 @@ const companySizes = [
 ];
 
 const weekdayOptions = [
-  { value: "1", label: "Monday" },
-  { value: "2", label: "Tuesday" },
-  { value: "3", label: "Wednesday" },
-  { value: "4", label: "Thursday" },
-  { value: "5", label: "Friday" },
+  { value: "1", label: t("demo.form.weekdays.monday") },
+  { value: "2", label: t("demo.form.weekdays.tuesday") },
+  { value: "3", label: t("demo.form.weekdays.wednesday") },
+  { value: "4", label: t("demo.form.weekdays.thursday") },
+  { value: "5", label: t("demo.form.weekdays.friday") },
+];
+
+const points = [
+  t("demo.point1"),
+  t("demo.point2"),
+  t("demo.point3"),
+  t("demo.point4"),
+  t("demo.point5"),
 ];
 
 const times = computed(() => {
@@ -366,16 +317,6 @@ const form = reactive<Form>({
 const errors = reactive<Errors>({});
 
 const isSubmitting = ref(false);
-
-// Add reCAPTCHA script using useHead
-useHead({
-  script: [
-    {
-      src: `https://www.google.com/recaptcha/api.js?render=6Le1080qAAAAAD-zQuyFtTF_WcxX6qOhkAF4YlRm`,
-      defer: true,
-    },
-  ],
-});
 
 watch(
   () => form.fullName,
@@ -465,21 +406,21 @@ const validateForm = () => {
   errors.comments = "";
 
   if (!form.fullName) {
-    errors.fullName = "Full name is required";
+    errors.fullName = t("demo.form.validation.fullNameRequired");
     isValid = false;
   } else if (form.fullName.length > 255) {
-    errors.fullName = "Full name must not exceed 255 characters";
+    errors.fullName = t("demo.form.validation.fullNameTooLong");
     isValid = false;
   }
 
   if (!form.email) {
-    errors.email = "Business email is required";
+    errors.email = t("demo.form.validation.emailRequired");
     isValid = false;
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    errors.email = "Please enter a valid email address";
+    errors.email = t("demo.form.validation.emailNotValid");
     isValid = false;
   } else if (form.email.length > 255) {
-    errors.email = "Email must not exceed 255 characters";
+    errors.email = t("demo.form.validation.emailTooLong");
     isValid = false;
   }
 
@@ -487,33 +428,33 @@ const validateForm = () => {
     form.phone &&
     !/^\+?[0-9]{7,}$/.test(form.phone.replace(/[() \-]/g, ""))
   ) {
-    errors.phone = "Please enter a valid phone number";
+    errors.phone = t("demo.form.validation.phoneNotValid");
     isValid = false;
   } else if (form.phone.length > 20) {
-    errors.phone = "Phone number must not exceed 20 characters";
+    errors.phone = t("demo.form.validation.phoneTooLong");
     isValid = false;
   }
 
   if (!form.company) {
-    errors.company = "Company name is required";
+    errors.company = t("demo.form.validation.companyRequired");
     isValid = false;
   } else if (form.company.length > 255) {
-    errors.company = "Company name must not exceed 255 characters";
+    errors.company = t("demo.form.validation.companyTooLong");
     isValid = false;
   }
 
   if (!form.countryId) {
-    errors.countryId = "Country is required";
+    errors.countryId = t("demo.form.validation.countryIdRequired");
     isValid = false;
   }
 
   if (!form.companySize) {
-    errors.companySize = "Company size is required";
+    errors.companySize = t("demo.form.validation.companySizeRequired");
     isValid = false;
   }
 
   if (form.comments && form.comments.length > 65000) {
-    errors.comments = "Comments must not exceed 65000 characters";
+    errors.comments = t("demo.form.validation.commentsTooLong");
     isValid = false;
   }
 
@@ -535,7 +476,7 @@ const submitForm = async () => {
   try {
     // Execute reCAPTCHA
     const recaptchaToken = await (window as any).grecaptcha.execute(
-      "6Le1080qAAAAAD-zQuyFtTF_WcxX6qOhkAF4YlRm",
+      useRuntimeConfig().public.recaptchaKey,
       { action: "submit" }
     );
 
@@ -564,13 +505,12 @@ const submitForm = async () => {
 
     formSubmitted.value = true;
   } catch (error: any) {
-    console.error("Error submitting form:", error);
     if (error.data?.errorCode === "invalid_recaptcha") {
-      submitError.value = "reCAPTCHA verification failed. Please try again.";
+      submitError.value = t("demo.form.validation.reCaptchaFailed");
     } else if (error.data?.errorCode === "no_business_email") {
-      errors.email = "Please use a valid business email address";
+      errors.email = t("demo.form.validation.noBusinessEmail");
     } else if (error.data?.errorCode === "already_submitted") {
-      submitError.value = "You have already submitted a demo request";
+      submitError.value = t("demo.form.validation.alreadySubmitted");
     } else if (error.data?.errorCode === "invalid_data" && error.data?.errors) {
       Object.entries(error.data.errors).forEach(([key, messages]) => {
         errors[key as keyof Errors] = Array.isArray(messages)
@@ -578,7 +518,7 @@ const submitForm = async () => {
           : messages;
       });
     } else {
-      submitError.value = "An error occurred. Please try again later.";
+      submitError.value = t("demo.form.validation.genericError");
     }
     moveToError();
   } finally {
@@ -586,7 +526,21 @@ const submitForm = async () => {
   }
 };
 
+let scriptEl: any = undefined;
+
 onMounted(async () => {
+  // Adding reCAPTCHA script
+  if (!document.getElementById("recaptcha-script")) {
+    scriptEl = document.createElement("script");
+    scriptEl.id = "recaptcha-script";
+    scriptEl.src = `https://www.google.com/recaptcha/api.js?render=${
+      useRuntimeConfig().public.recaptchaKey
+    }`;
+    scriptEl.async = true;
+    scriptEl.defer = true;
+    document.head.appendChild(scriptEl);
+  }
+
   // Set timezone on client-side only
   timeZone.value = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -606,5 +560,20 @@ onMounted(async () => {
   } finally {
     countriesLoading.value = false;
   }
+});
+
+onUnmounted(() => {
+  // Remove reCAPTCHA script
+  if (scriptEl && scriptEl.parentNode) {
+    scriptEl.parentNode.removeChild(scriptEl);
+  }
+  // Remove reCAPTCHA badge
+  const badge = document.querySelector(".grecaptcha-badge");
+  if (badge && badge.parentNode) {
+    badge.parentNode.removeChild(badge);
+  }
+
+  // Clear grecaptcha object if needed (optional but safer)
+  delete window.grecaptcha;
 });
 </script>

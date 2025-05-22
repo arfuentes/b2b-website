@@ -144,7 +144,10 @@ export default defineNuxtConfig({
       webappBaseUrl:
         process.env.NUXT_WEBAPP_BASE_URL || "https://app.zamdit.com",
       apiBaseUrl: process.env.NUXT_API_BASE_URL || "https://api.zamdit.com/web",
-      recaptchaKey: process.env.NUXT_RECAPTCHA_KEY || "6Le1080qAAAAAD-zQuyFtTF_WcxX6qOhkAF4YlRm",
+      recaptchaKey:
+        process.env.NUXT_RECAPTCHA_KEY ||
+        "6Le1080qAAAAAD-zQuyFtTF_WcxX6qOhkAF4YlRm",
+      apiKey: process.env.NUXT_API_KEY || "75a0fd6ca08ff568110e6c8c23c197f1",
     },
   },
   gtag: {

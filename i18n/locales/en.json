@@ -185,15 +185,82 @@
     }
   },
   "pricing": {
-    "title": "Simple, Transparent Pricing",
-    "subtitle": "Choose the plan that works best for your business",
+    "title": "Clear Plans, No Surprises",
+    "subtitle": "Choose the plan that fits your hiring goals, with transparent pricing and flexible options",
+    "cta": {
+      "title": "Try Zamdit Free — No Credit Card Needed",
+      "subtitle1": "Explore the platform with sample data and see how Zamdit can streamline your hiring process.",
+      "subtitle2": "No setup required — just sign up and start testing real features right away.",
+      "button": "Start Free Trial"
+    },
+    "currency": "Currency",
     "monthly": "Monthly",
-    "annual": "Annual",
-    "cta": "Get Started",
-    "enterprise": {
-      "title": "Need a custom solution?",
-      "description": "Contact us to discuss your specific needs",
-      "button": "Contact Sales"
+    "annually": "Annually",
+    "perMonth": "per month",
+    "cardCta": "Get Started",
+    "percentOff": "{percent} off when paid annually",
+    "getStarted": "Get Started",
+    "countUsers": "users",
+    "countCandidates": "candidates",
+    "month": "month",
+    "year": "year",
+    "additionalCandidate": "additional candidate",
+    "billedInAdvance": "All plans are billed in advance. Additional fees are invoiced monthly.",
+    "noCancellationFees": "Cancel any time without cancellation fees, but there's no refund, your account will remain active until the end of the billing period.",
+    "vatNotice": "VAT Notice: Prices do not include VAT. Applicable VAT will be calculated and added at checkout based on your billing country and VAT status.",
+    "planComparison": "Plan comparison",
+    "feature": "Feature",
+    "usersFeature": "Users",
+    "candidatesMonthFeature": "<strong>Candidates</strong> / month",
+    "candidatesYearFeature": "<strong>Candidates</strong> / year",
+    "faqTitle": "Frequently asked questions",
+    "faq1": {
+      "question": "What is Zamdit and how does it work?",
+      "answer": "Zamdit is an all-in-one Applicant Tracking System (ATS) that helps you streamline hiring from start to finish. It lets you manage candidates, customize pipelines, collaborate with your team, run online assessments, and build your careers portal — all without writing code. With automation and AI insights, you can hire faster and smarter."
+    },
+    "faq2": {
+      "question": "How does the free trial work?",
+      "answer": "Zamdit offers a free trial with no credit card required. During the trial, you can explore most platform features, including using Test Data mode, which simulates real recruitment activity without needing to add actual data. Any candidates added during the trial don’t count toward your plan limits. If you decide to continue after the trial, simply set up your subscription before it ends. You won’t be charged unless you activate a plan."
+    },
+    "faq3": {
+      "question": "What happens if I go over the candidate limit in my plan?",
+      "answer": "If you exceed the number of candidates included in your plan, you’ll be charged a small fee for each additional candidate. Candidates are only counted when they move out of the \"Applied\" stage. You can enable a setting to prevent going over the limit by restricting candidate movement once the cap is reached. Extra candidate fees are invoiced monthly, even if you're on an annual plan."
+    },
+    "faq4": {
+      "question": "Can I customize the Career Portal to match my brand?",
+      "answer": "Yes. Zamdit’s no-code Portal Designer lets you fully customize your Career Portal to match your brand—logos, colors, layout, and content. You can drag and drop elements, add job listings, and optimize for mobile. Organizations on the Standard plan or higher can also use a custom domain to reinforce branding and create a seamless candidate experience."
+    },
+    "faq5": {
+      "question": "How do I manage job openings and candidate stages?",
+      "answer": "Zamdit enables you to create tailored hiring pipelines by defining job details and customizing each stage with evaluations, questionnaires, assessments, and automated actions. The Progress Board offers a visual, centralized overview to track candidate progress, advance or disqualify applicants, schedule interviews, communicate, compare candidates, and manage tasks and reports, ensuring an efficient and organized recruitment process."
+    },
+    "faq6": {
+      "question": "What are Online Assessments and how do they help in hiring?",
+      "answer": "Online Assessments in Zamdit help you objectively evaluate candidates’ skills, knowledge, and suitability for a role. You can use built-in tests or create your own, covering areas like cognitive ability, programming, personality, and more. These assessments reduce bias, save time, and provide structured insights to identify top candidates more efficiently."
+    },
+    "faq7": {
+      "question": "How do Online Interview Questionnaires work in Zamdit?",
+      "answer": "Online Interview Questionnaires in Zamdit let you pre-screen candidates by collecting detailed responses through customizable forms. You can include video questions, file uploads, open-ended answers, and more. Responses are recorded and organized for easy review, helping you evaluate communication skills, qualifications, and fit—before moving candidates to the next stage."
+    },
+    "faq8": {
+      "question": "How does Zamdit help collect candidate references?",
+      "answer": "Zamdit simplifies reference checks by automatically sending structured questionnaires to contacts provided by candidates. These are triggered by Reference Check questions in interview questionnaires. You can customize the questions to match the role, collect feedback from professional or personal references, and gain reliable insights to support hiring decisions."
+    },
+    "faq9": {
+      "question": "Can I automate parts of the hiring process with Zamdit?",
+      "answer": "Yes, Zamdit supports automation throughout the hiring pipeline with triggers that send emails or notifications at key stages, plus reusable pipeline templates and customizable email templates, helping your team maintain efficiency and consistency while delivering a professional candidate experience."
+    },
+    "faq10": {
+      "question": "How does Zamdit support collaboration between hiring team members?",
+      "answer": "Zamdit fosters teamwork with tools like shared notes, tagging, threaded discussions, voting on candidates, task assignment, candidate comparison, and centralized access to resumes, evaluations, emails, files, and calendars, keeping your hiring team aligned and informed at every stage."
+    },
+    "faq11": {
+      "question": "Is it possible to collect feedback or ratings on candidates?",
+      "answer": "Yes, Zamdit provides standardized evaluation forms with scorecards and custom questions for interviewers to rate candidates objectively, plus candidate feedback forms after assessments to gather insights, supporting fair, consistent evaluations and continuous improvement of your hiring process."
+    },
+    "faq12": {
+      "question": "How do External Recruiters work with Zamdit?",
+      "answer": "Zamdit lets you collaborate with external recruiters through a dedicated portal. You can assign recruiters to jobs, give them access to share unique candidate links, and let them conduct phone screens and submit evaluations. Their portal allows them to track candidate progress and update their info. External recruiters aren't counted as system users, and their activity is fully trackable."
     }
   },
   "features": {

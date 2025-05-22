@@ -52,12 +52,37 @@ export interface BlogResponse {
   };
 }
 
+export interface PlanCurrency {
+  currency: string;
+  symbol: string;
+  htmlEntity: string;
+  monthlyPrice: number;
+  yearlyPrice: number;
+  candidatePrice: number;
+  userMonthlyPrice: number;
+}
+
+export interface Plan {
+  id: number;
+  name: string;
+  description: string;
+  items: string[];
+  users: number;
+  candidatesPerMonth: number;
+  candidatesPerYear: number;
+  currencyDetails: PlanCurrency[];
+}
+
+export interface PlansResponse {
+  data: Plan[];
+}
+
 export const useApi = () => {
   const { locale } = useI18n();
   const loading = ref(false);
   const error = ref<string | null>(null);
 
-  const API_KEY = "75a0fd6ca08ff568110e6c8c23c197f1";
+  const API_KEY = useRuntimeConfig().public.apiKey;
   const BASE_URL = useRuntimeConfig().public.apiBaseUrl;
 
   const headers = {

@@ -504,6 +504,7 @@ const submitForm = async () => {
     );
 
     formSubmitted.value = true;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   } catch (error: any) {
     if (error.data?.errorCode === "invalid_recaptcha") {
       submitError.value = t("demo.form.validation.reCaptchaFailed");

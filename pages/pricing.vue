@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-white">
     <div class="bg-alternate pt-16 pb-12">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-10">
+        <div class="text-center">
           <h1 class="text-4xl text-secondary-500 font-heading font-bold mb-4">
             {{ $t("pricing.title") }}
           </h1>
@@ -70,12 +70,13 @@
               {{ $t("pricing.percentOff", { percent: percentOff(plan) }) }}
             </div>
 
-            <div class="text-center my-6">
-              <button
+            <div class="flex justify-center my-6">
+              <NuxtLink
+                :to="tryAppUrl"
                 class="bg-primary-500 hover:bg-secondary-500 text-white font-bold px-8 py-1.5 rounded-full transition-colors"
               >
                 {{ $t("pricing.cardCta") }}
-              </button>
+              </NuxtLink>
             </div>
 
             <hr class="my-6" />
@@ -301,7 +302,7 @@
         >
           <button
             @click="toggle(index)"
-            class="w-full px-4 py-3 text-left font-medium bg-neutral-50 hover:bg-neutral-100 flex justify-between items-center rounded-t-md"
+            class="w-full px-4 py-3 text-left font-semibold bg-neutral-50 hover:bg-neutral-100 flex justify-between items-center rounded-t-md"
             :class="{ 'rounded-b-md': !faq.open }"
           >
             {{ faq.question }}

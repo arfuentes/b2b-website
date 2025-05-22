@@ -185,15 +185,82 @@
     }
   },
   "pricing": {
-    "title": "Precios Simples y Transparentes",
-    "subtitle": "Elige el plan que mejor se adapte a tu negocio",
+    "title": "Planes Claros, Sin Sorpresas",
+    "subtitle": "Elige el plan que se adapta a tus objetivos de contratación, con precios transparentes y opciones flexibles",
+    "cta": {
+      "title": "Prueba Zamdit gratis — No se requiere tarjeta de crédito",
+      "subtitle1": "Explora la plataforma con datos de ejemplo y descubre cómo Zamdit puede optimizar tu proceso de contratación.",
+      "subtitle2": "No necesitas configurar nada — solo regístrate y empieza a probar funciones reales de inmediato.",
+      "button": "Iniciar Prueba Gratuita"
+    },
+    "currency": "Moneda",
     "monthly": "Mensual",
-    "annual": "Anual",
-    "cta": "Comenzar",
-    "enterprise": {
-      "title": "¿Necesitas una solución personalizada?",
-      "description": "Contáctanos para discutir tus necesidades específicas",
-      "button": "Contactar a Ventas"
+    "annually": "Anual",
+    "perMonth": "por mes",
+    "cardCta": "Comenzar",
+    "percentOff": "{percent} de descuento al pagar anualmente",
+    "getStarted": "Comenzar",
+    "countUsers": "usuarios",
+    "countCandidates": "candidatos",
+    "month": "mes",
+    "year": "año",
+    "additionalCandidate": "candidato adicional",
+    "billedInAdvance": "Todos los planes se facturan por adelantado. Los cargos adicionales se facturan mensualmente.",
+    "noCancellationFees": "Cancela en cualquier momento sin gastos de cancelación, pero no hay reembolso; tu cuenta permanecerá activa hasta el final del período de facturación.",
+    "vatNotice": "Aviso sobre el IVA: Los precios no incluyen IVA. El IVA aplicable se calculará y añadirá al momento del pago según su país de facturación y su estado de IVA.",
+    "planComparison": "Comparativa de planes",
+    "feature": "Funcionalidad",
+    "usersFeature": "Usuarios",
+    "candidatesMonthFeature": "<strong>Candidatos</strong> / mes",
+    "candidatesYearFeature": "<strong>Candidatos</strong> / año",
+    "faqTitle": "Preguntas frecuentes",
+    "faq1": {
+      "question": "¿Qué es Zamdit y cómo funciona?",
+      "answer": "Zamdit es una plataforma integral de seguimiento de candidatos (ATS) que optimiza todo el proceso de contratación. Te permite gestionar candidatos, personalizar etapas, colaborar con tu equipo, aplicar evaluaciones online y crear tu portal de empleos, todo sin necesidad de programar. Con automatización y análisis basados en IA, puedes contratar más rápido e inteligentemente."
+    },
+    "faq2": {
+      "question": "¿Cómo funciona la prueba gratuita?",
+      "answer": "Zamdit ofrece una prueba gratuita sin necesidad de tarjeta de crédito. Durante el periodo de prueba puedes explorar casi todas las funciones, incluyendo el modo de Datos de Prueba, que simula actividad real sin usar datos reales. Los candidatos añadidos no cuentan para el límite del plan. Si decides continuar, configura tu suscripción antes de que finalice la prueba. No se te cobrará a menos que actives un plan."
+    },
+    "faq3": {
+      "question": "¿Qué ocurre si supero el límite de candidatos de mi plan?",
+      "answer": "Si excedes el número de candidatos incluidos en tu plan, se te cobrará una tarifa por cada candidato adicional. Solo se cuentan los candidatos que avanzan más allá de la etapa 'Postulado'. Puedes activar una opción que impide seguir avanzando candidatos al llegar al límite. Estas tarifas se facturan mensualmente, incluso si tu plan es anual."
+    },
+    "faq4": {
+      "question": "¿Puedo personalizar el Portal de Empleo con mi marca?",
+      "answer": "Sí. El Diseñador de Portales de Zamdit te permite personalizar completamente tu Portal de Empleo sin código — logotipo, colores, diseño y contenido. Puedes arrastrar elementos, añadir ofertas y optimizarlo para móviles. Los planes Standard o superiores permiten usar un dominio personalizado para reforzar tu marca y ofrecer una experiencia fluida al candidato."
+    },
+    "faq5": {
+      "question": "¿Cómo gestiono ofertas de trabajo y etapas del candidato?",
+      "answer": "Zamdit te permite crear flujos de contratación personalizados definiendo los detalles del puesto y configurando cada etapa con evaluaciones, formularios, pruebas y acciones automáticas. El Tablero de Progreso te da una vista visual centralizada para avanzar o descartar candidatos, agendar entrevistas, comunicarte, comparar perfiles y gestionar tareas y reportes."
+    },
+    "faq6": {
+      "question": "¿Qué son las Evaluaciones Online y cómo ayudan a contratar?",
+      "answer": "Las Evaluaciones Online de Zamdit te ayudan a evaluar de forma objetiva las habilidades y conocimientos de los candidatos. Puedes usar pruebas predefinidas o crear las tuyas en áreas como razonamiento, programación o personalidad. Estas pruebas reducen sesgos, ahorran tiempo y ofrecen información estructurada para identificar al mejor talento."
+    },
+    "faq7": {
+      "question": "¿Cómo funcionan los Cuestionarios de Entrevista Online?",
+      "answer": "Los Cuestionarios de Entrevista Online permiten preseleccionar candidatos con formularios personalizados. Puedes incluir preguntas en video, carga de archivos o respuestas abiertas. Las respuestas se organizan automáticamente para facilitar la revisión y evaluar comunicación, cualificaciones y compatibilidad antes de avanzar a la siguiente etapa."
+    },
+    "faq8": {
+      "question": "¿Cómo ayuda Zamdit a recopilar referencias de candidatos?",
+      "answer": "Zamdit facilita las referencias enviando automáticamente formularios estructurados a los contactos que los candidatos indican. Esto se activa a través de preguntas de referencia en los cuestionarios de entrevista. Puedes personalizar las preguntas según el rol y obtener información fiable de contactos personales o profesionales para tomar mejores decisiones."
+    },
+    "faq9": {
+      "question": "¿Puedo automatizar partes del proceso de selección con Zamdit?",
+      "answer": "Sí. Zamdit permite automatizar tu pipeline con activadores que envían emails o notificaciones en momentos clave, además de plantillas reutilizables y correos personalizables para mantener eficiencia, coherencia y una experiencia profesional para los candidatos."
+    },
+    "faq10": {
+      "question": "¿Cómo facilita Zamdit la colaboración entre miembros del equipo?",
+      "answer": "Zamdit fomenta el trabajo en equipo con herramientas como notas compartidas, menciones, debates en hilos, votaciones por etapa, asignación de tareas, comparación de candidatos y acceso centralizado a CVs, evaluaciones, archivos y calendarios, manteniendo al equipo informado en cada etapa."
+    },
+    "faq11": {
+      "question": "¿Se pueden recopilar opiniones o calificaciones sobre los candidatos?",
+      "answer": "Sí. Zamdit incluye formularios de evaluación estandarizados con métricas y preguntas personalizables para calificar a los candidatos objetivamente, además de formularios de feedback tras evaluaciones para recoger impresiones, promoviendo evaluaciones justas y mejoras continuas."
+    },
+    "faq12": {
+      "question": "¿Cómo trabajan los reclutadores externos con Zamdit?",
+      "answer": "Zamdit permite colaborar con reclutadores externos mediante un portal exclusivo. Puedes asignarles puestos, darles enlaces únicos para compartir candidatos, realizar entrevistas telefónicas y enviar evaluaciones. Pueden seguir el progreso de sus candidatos y actualizar la información. No cuentan como usuarios del sistema, pero toda su actividad es rastreable."
     }
   },
   "features": {

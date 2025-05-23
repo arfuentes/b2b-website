@@ -171,18 +171,21 @@
           <NuxtLinkLocale
             to="features"
             class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 text-lg hover:text-primary-500 hover:bg-neutral-100 transition-colors"
+            @click="closeMobileMenu"
           >
             {{ $t("header.features") }}
           </NuxtLinkLocale>
           <NuxtLinkLocale
             to="pricing"
             class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 text-lg hover:text-primary-500 hover:bg-neutral-100 transition-colors"
+            @click="closeMobileMenu"
           >
             {{ $t("header.pricing") }}
           </NuxtLinkLocale>
           <NuxtLinkLocale
-            to="aboutUs"
+            to="about"
             class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 text-lg hover:text-primary-500 hover:bg-neutral-100 transition-colors"
+            @click="closeMobileMenu"
           >
             {{ $t("header.aboutUs") }}
           </NuxtLinkLocale>
@@ -255,6 +258,10 @@ const handleClickOutside = (event: MouseEvent) => {
   ) {
     showLanguageMenu.value = false;
   }
+};
+
+const closeMobileMenu = () => {
+  mobileMenuOpen.value = false;
 };
 
 onMounted(() => {

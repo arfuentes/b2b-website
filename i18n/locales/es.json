@@ -224,7 +224,7 @@
     },
     "faq3": {
       "question": "¿Qué ocurre si supero el límite de candidatos de mi plan?",
-      "answer": "Si excedes el número de candidatos incluidos en tu plan, se te cobrará una tarifa por cada candidato adicional. Solo se cuentan los candidatos que avanzan más allá de la etapa 'Postulado'. Puedes activar una opción que impide seguir avanzando candidatos al llegar al límite. Estas tarifas se facturan mensualmente, incluso si tu plan es anual."
+      "answer": "Si excedes el número de candidatos incluidos en tu plan, se te cobrará una tarifa por cada candidato adicional. Solo se cuentan los candidatos que avanzan más allá de la etapa 'Solicitado'. Puedes activar una opción que impide seguir avanzando candidatos al llegar al límite. Estas tarifas se facturan mensualmente, incluso si tu plan es anual."
     },
     "faq4": {
       "question": "¿Puedo personalizar el Portal de Empleo con mi marca?",

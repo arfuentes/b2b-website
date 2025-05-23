@@ -106,8 +106,8 @@ export default defineNuxtConfig({
         es: "/seguridad",
       },
       terms: {
-        en: "/terms",
-        es: "/terminos",
+        en: "/terms-of-service",
+        es: "/terminos-de-servicio",
       },
     },
     lazy: false,

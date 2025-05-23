@@ -73,6 +73,10 @@ export default defineNuxtConfig({
         en: "/contact-us",
         es: "/contactanos",
       },
+      cookie: {
+        en: "/cookie-policy",
+        es: "/politica-de-cookies",
+      },
       demo: {
         en: "/request-demo",
         es: "/solicitar-demo",
@@ -90,8 +94,8 @@ export default defineNuxtConfig({
         es: "/precios",
       },
       privacy: {
-        en: "/privacy",
-        es: "/privacidad",
+        en: "/privacy-policy",
+        es: "/politica-de-privacidad",
       },
       questionnaires: {
         en: "/about-questionnaires",

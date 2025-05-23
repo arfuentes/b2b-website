@@ -1,7 +1,7 @@
 {
   "header": {
     "login": "Iniciar sesión",
-    "features": "Características",
+    "features": "Producto",
     "pricing": "Precios",
     "aboutUs": "Sobre nosotros",
     "requestDemo": "Solicitar una Demo",
@@ -23,6 +23,7 @@
     "followUs": "Síguenos",
     "copyright": "Zamdit — Todos los derechos reservados.",
     "privacy": "Política de Privacidad",
+    "cookie": "Política de Cookies",
     "terms": "Términos de Servicio"
   },
   "home": {
@@ -343,6 +344,14 @@
       "title": "Sobre los Cuestionarios en Línea",
       "subtitle": "Qué esperar de nuestros cuestionarios"
     }
+  },
+  "cookie": {
+    "title": "Política de Cookies",
+    "lastUpdated": "Última actualización",
+    "concentMessage": "Usamos cookies esenciales para que nuestro sitio funcione correctamente. Con tu consentimiento, también podemos usar cookies no esenciales para mejorar tu experiencia y analizar el tráfico. Al hacer clic en “Aceptar”, aceptas el uso de cookies según lo descrito en nuestra ",
+    "cookiePolicy": "Política de Cookies",
+    "decline": "Rechazar",
+    "accept": "Aceptar"
   },
   "common": {
     "learnMore": "Saber Más",

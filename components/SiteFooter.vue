@@ -97,7 +97,7 @@
           &copy; {{ new Date().getFullYear() }} {{ $t("footer.copyright") }}
         </div>
 
-        <div class="flex mt-4 sm:mt-0 space-x-6">
+        <div class="flex flex-wrap mt-4 sm:mt-0 space-x-6">
           <NuxtLinkLocale
             to="privacy"
             class="hover:text-white transition-colors"
@@ -106,6 +106,12 @@
           </NuxtLinkLocale>
           <NuxtLinkLocale to="terms" class="hover:text-white transition-colors">
             {{ $t("footer.terms") }}
+          </NuxtLinkLocale>
+          <NuxtLinkLocale
+            to="cookie"
+            class="hover:text-white transition-colors"
+          >
+            {{ $t("footer.cookie") }}
           </NuxtLinkLocale>
         </div>
       </div>

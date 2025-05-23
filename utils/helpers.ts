@@ -67,3 +67,12 @@ export function formatDecimal(
         });
   return formatter.format(numberValue);
 }
+
+export function formatDate(dateString: string, locale: string) {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat(locale === "es" ? "es-ES" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+}

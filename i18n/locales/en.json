@@ -1,7 +1,7 @@
 {
   "header": {
     "login": "Login",
-    "features": "Features",
+    "features": "Product",
     "pricing": "Pricing",
     "aboutUs": "About us",
     "requestDemo": "Request a Demo",
@@ -23,6 +23,7 @@
     "followUs": "Follow Us",
     "copyright": "Zamdit — All rights reserved.",
     "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy",
     "terms": "Terms of Service"
   },
   "home": {
@@ -343,6 +344,14 @@
       "title": "About Online Questionnaires",
       "subtitle": "What to expect from our questionnaires"
     }
+  },
+  "cookie": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated",
+    "concentMessage": "We use essential cookies to make our site function properly. With your consent, we may also use non-essential cookies to enhance your experience and analyze traffic. By clicking “Accept,” you agree to our use of cookies as described in our ",
+    "cookiePolicy": "Cookie Policy",
+    "decline": "Decline",
+    "accept": "Accept"
   },
   "common": {
     "learnMore": "Learn More",

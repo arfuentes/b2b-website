@@ -97,7 +97,7 @@
                       {{ post.author.name }}
                     </div>
                     <div class="text-sm text-neutral-500">
-                      {{ formatDate(post.publishedAt) }}
+                      {{ formatDate(post.publishedAt, locale) }}
                     </div>
                   </div>
                 </div>
@@ -207,15 +207,6 @@ const shareNetworks = computed(() => {
     },
   ];
 });
-
-const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat(locale.value === "es" ? "es-ES" : "en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }).format(date);
-};
 
 const sharePost = (url: string) => {
   window.open(url, "_blank", "width=600,height=400");

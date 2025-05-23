@@ -353,6 +353,10 @@
     "decline": "Rechazar",
     "accept": "Aceptar"
   },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización"
+  },
   "common": {
     "learnMore": "Saber Más",
     "viewAll": "Ver Todo",

@@ -353,6 +353,10 @@
     "decline": "Decline",
     "accept": "Accept"
   },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated"
+  },
   "common": {
     "learnMore": "Learn More",
     "viewAll": "View All",

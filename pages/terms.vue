@@ -113,7 +113,7 @@
         </p>
         <p>
           6.4 <strong>Cancelada:</strong> La suscripción ha finalizado. Acceso
-          limitado y datos retenidos hasta por 12 meses.
+          limitado y datos retenidos hasta por 6 meses.
         </p>
 
         <h2>7. Modificaciones de la Suscripción</h2>
@@ -350,7 +350,7 @@
         </p>
         <p>
           6.4 <strong>Cancelled:</strong> Subscription ended. Access is limited,
-          but data is retained for up to 12 months.
+          but data is retained for up to 6 months.
         </p>
 
         <h2>7. Modifications to Subscriptions</h2>
@@ -461,7 +461,7 @@
 
         <p>
           14.2 Zamdit’s total liability in any claim arising out of these Terms
-          will not exceed the total amount you paid in the 12 months preceding
+          will not exceed the total amount you paid in the 6 months preceding
           the claim.
         </p>
 
@@ -472,7 +472,7 @@
         </p>
         <p>
           15.2 Upon termination, your access will be revoked, and we will retain
-          your data for up to 12 months unless deletion is requested.
+          your data for up to 6 months unless deletion is requested.
         </p>
 
         <h2>16. Governing Law and Jurisdiction</h2>
